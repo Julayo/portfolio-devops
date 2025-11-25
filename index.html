@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio DevOps CI/CD - Julio Reyes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top-bar">
+    <div class="logo">
+        &lt;/&gt; <span data-i18n="siteTitle">Portafolio DevOps CI/CD</span>
+    </div>
+
+    <!-- Switch de idioma -->
+    <div class="lang-switcher">
+        <button class="lang-btn" data-lang="es" aria-label="Español">
+            🇨🇱 ES
+        </button>
+        <button class="lang-btn" data-lang="en" aria-label="English">
+            🇺🇸 EN
+        </button>
+    </div>
+</header>
+
+<nav class="main-nav">
+    <a href="#home" data-i18n="nav.home">Inicio</a>
+    <a href="#about" data-i18n="nav.about">Sobre mí</a>
+    <a href="#skills" data-i18n="nav.skills">Skills</a>
+    <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+    <a href="#cicd" data-i18n="nav.cicd">CI/CD Demo</a>
+    <a href="#contact" data-i18n="nav.contact">Contacto</a>
+</nav>
+
+<main class="content">
+    <!-- HOME -->
+    <section id="home" class="section">
+        <h1 data-i18n="home.title">Hola, soy Julio Reyes</h1>
+        <p data-i18n="home.subtitle">
+            Ingeniero DevOps en Chile, ayudando a equipos de Estados Unidos a automatizar sus despliegues en la nube.
+        </p>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="about" class="section">
+        <h2 data-i18n="about.title">Sobre mí</h2>
+        <p data-i18n="about.body">
+            Soy ingeniero DevOps en Chile, con experiencia trabajando para clientes en Estados Unidos. 
+            Me especializo en CI/CD, automatización con Python y entornos en la nube (principalmente AWS).
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <h2 data-i18n="skills.title">Skills principales</h2>
+        <ul class="list">
+            <li data-i18n="skills.item1">
+                CI/CD con Jenkins, Tekton, GitHub Actions y AWS CodePipeline.
+            </li>
+            <li data-i18n="skills.item2">
+                Infraestructura en AWS (Lambda, S3, ECS/EKS, CloudFront, etc.).
+            </li>
+            <li data-i18n="skills.item3">
+                Scripting con Python y Bash para automatizar tareas.
+            </li>
+            <li data-i18n="skills.item4">
+                Contenedores (Docker) y despliegues en Kubernetes/OpenShift.
+            </li>
+        </ul>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="projects" class="section">
+        <h2 data-i18n="projects.title">Proyectos</h2>
+
+        <h3 data-i18n="projects.platformTitle">
+            Plataforma CI/CD multi-entorno
+        </h3>
+        <p data-i18n="projects.platformBody">
+            Diseño y automatización de pipelines desde desarrollo hasta producción, incorporando análisis estático de código,
+            creación de imágenes Docker y despliegues automatizados en Kubernetes.
+        </p>
+
+        <h3 data-i18n="projects.serverlessTitle">
+            Automatización de despliegues serverless
+        </h3>
+        <p data-i18n="projects.serverlessBody">
+            Implementación de pipelines para funciones Lambda con pruebas automatizadas y despliegues controlados por rama,
+            reduciendo el tiempo de entrega y errores manuales.
+        </p>
+    </section>
+
+    <!-- CI/CD DEMO -->
+    <section id="cicd" class="section">
+        <h2 data-i18n="cicd.title">CI/CD Demo</h2>
+        <p data-i18n="cicd.body1">
+            Esta sección está pensada para conectarse a un pipeline que cambie el tema o colores del sitio con cada despliegue.
+        </p>
+        <p data-i18n="cicd.body2">
+            Pipeline conectado (placeholder). Entorno actual: Demo local.
+        </p>
+        <p data-i18n="cicd.body3">
+            La idea es que, en producción, un pipeline en AWS (por ejemplo con CodePipeline + CodeBuild + Lambda)
+            pueda actualizar este sitio y reflejar cambios visuales simples (como el color del tema) para demostrar el flujo de CI/CD.
+        </p>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact" class="section">
+        <h2 data-i18n="contact.title">Contacto</h2>
+        <ul class="contact-list">
+            <li data-i18n="contact.email">
+                📧 Email: tu-correo-profesional@ejemplo.com
+            </li>
+            <li data-i18n="contact.linkedin">
+                🔗 LinkedIn: linkedin.com/in/tu-perfil
+            </li>
+            <li data-i18n="contact.location">
+                📍 Ubicación: Santiago, Chile (disponible remoto para USA / Latam)
+            </li>
+            <li data-i18n="contact.footer">
+                Portafolio construido como sitio estático para demostración de DevOps/CI-CD.
+            </li>
+        </ul>
+    </section>
+</main>
+
+<footer class="footer">
+    <span data-i18n="footer.text">
+        © 2025 Julio Reyes - Portafolio DevOps CI/CD
+    </span>
+</footer>
+
+<!-- Scripts -->
+<script src="js/lang.js" defer></script>
+</body>
+</html>
