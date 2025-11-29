@@ -1,52 +1,56 @@
 {
   "siteTitle": "Portafolio DevOps CI/CD",
+
   "nav": {
     "home": "Inicio",
     "about": "Sobre mí",
     "skills": "Skills",
     "projects": "Proyectos",
-    "cicd": "CI/CD Demo",
+    "cicd": "Demo CI/CD",
     "contact": "Contacto"
   },
+
   "home": {
     "title": "Hola, soy Julio Reyes",
-    "subtitle": "DevOps Engineer especializado en automatización CI/CD y AWS Cloud. Trabajo desde Chile con equipos en Estados Unidos, ayudando a optimizar despliegues, mejorar pipelines y crear infraestructura segura, estable y reproducible mediante IaC."
+    "subtitle": "Ingeniero DevOps en Chile, apoyando a equipos de Estados Unidos a automatizar sus despliegues en la nube."
   },
+
   "about": {
     "title": "Sobre mí",
-    "body": "Soy ingeniero DevOps con más de 4 años de experiencia trabajando con empresas en Estados Unidos (banca, plataformas enterprise y SaaS). Me enfoco en automatizar procesos, mejorar flujos de entrega y desplegar entornos cloud eficientes, seguros y confiables utilizando buenas prácticas DevOps, contenedores y Terraform."
+    "body": "Soy ingeniero DevOps en Chile, con experiencia trabajando para clientes del sector bancario y empresas en Estados Unidos. Me enfoco en CI/CD, automatización con Python y Bash, y entornos en la nube (principalmente AWS)."
   },
+
   "skills": {
     "title": "Skills principales",
-    "item1": "CI/CD Pipelines con Jenkins, GitHub Actions, Tekton, TeamCity y AWS CodePipeline.",
-    "item2": "AWS Cloud: Lambda, S3, EC2, CloudFront, API Gateway, DynamoDB, EKS/ECS.",
-    "item3": "Infraestructura como Código con Terraform y CloudFormation.",
-    "item4": "Contenedores y orquestación: Docker, Kubernetes y OpenShift.",
-    "item5": "Automatización con Python y Bash para tareas complejas y bots internos.",
-    "item6": "Git & DevOps Practices: modelos de branching, hooks, quality gates y seguridad."
+    "item1": "CI/CD con Jenkins, Tekton, GitHub Actions y AWS CodePipeline.",
+    "item2": "Infraestructura en AWS (Lambda, S3, ECS/EKS, CloudFront, etc.).",
+    "item3": "Scripting con Python y Bash para automatizar tareas repetitivas.",
+    "item4": "Contenedores (Docker) y despliegues en Kubernetes/OpenShift."
   },
+
   "projects": {
     "title": "Proyectos",
     "platformTitle": "Plataforma CI/CD multi-entorno",
-    "platformBody": "Automatización completa de pipelines desde desarrollo a producción: análisis estático de código, empaquetado Docker, deployments en Kubernetes/OpenShift, integración con quality gates y approvals. Reducción del tiempo de despliegue entre 40% y 60%.",
-    "serverlessTitle": "Automatización de despliegues serverless (AWS Lambda)",
-    "serverlessBody": "Pipelines automáticos para funciones Lambda con pruebas, versioning, aliases y despliegues controlados por rama. Entrega más rápida y confiable sin intervenciones manuales.",
-    "portfolioTitle": "Portafolio DevOps IaC (este sitio)",
-    "portfolioBody": "Infraestructura completa en AWS gestionada con Terraform: S3 privado con OAC, CloudFront con HTTPS (ACM), dominio en Route 53 y despliegue automático vía CodeBuild en cada push."
+    "platformBody": "Diseño y automatización de pipelines desde desarrollo hasta producción, incorporando análisis estático de código, creación de imágenes Docker y despliegues automatizados en Kubernetes.",
+    "serverlessTitle": "Automatización de despliegues serverless",
+    "serverlessBody": "Implementación de pipelines para funciones AWS Lambda con pruebas automatizadas y despliegues controlados por rama, reduciendo el tiempo de entrega y errores manuales."
   },
+
   "cicd": {
-    "title": "CI/CD Demo",
-    "body1": "Este demo muestra un pipeline CI/CD real implementado en AWS. Cada push en GitHub ejecuta CodeBuild, que reconstruye y publica el sitio en un bucket S3 privado.",
-    "body2": "CloudFront utiliza Origin Access Control (OAC) para acceder al bucket y entregar el sitio con HTTPS y caching global.",
-    "body3": "Toda la infraestructura está definida con Terraform para asegurar reproducibilidad y buenas prácticas de IaC."
+    "title": "Demo CI/CD",
+    "body1": "Esta sección está conectada a un pipeline que despliega este sitio estático a S3 y CloudFront.",
+    "body2": "Cada push a la rama main dispara un pipeline en AWS CodePipeline + CodeBuild.",
+    "body3": "A futuro quiero extender esta demo para que cada despliegue cambie el tema o colores del sitio, como indicador visual del flujo de CI/CD."
   },
+
   "contact": {
     "title": "Contacto",
     "email": "📧 Email: julioreyesrepiso@gmail.com",
     "linkedin": "🔗 LinkedIn: https://www.linkedin.com/in/julio-reyes-repiso-78a87454/",
-    "location": "📍 Ubicación: Santiago, Chile — Disponible remoto para USA",
-    "footer": "Portafolio construido con CI/CD real, IaC y buenas prácticas DevOps."
+    "location": "📍 Ubicación: Santiago, Chile (disponible remoto para USA / Latam)",
+    "footer": "Portafolio estático creado para demostrar habilidades de DevOps y CI/CD."
   },
+
   "footer": {
     "text": "© 2025 Julio Reyes - Portafolio DevOps CI/CD"
   }

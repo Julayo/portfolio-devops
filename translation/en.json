@@ -1,5 +1,6 @@
 {
   "siteTitle": "DevOps CI/CD Portfolio",
+
   "nav": {
     "home": "Home",
     "about": "About",
@@ -8,45 +9,48 @@
     "cicd": "CI/CD Demo",
     "contact": "Contact"
   },
+
   "home": {
     "title": "Hi, I'm Julio Reyes",
-    "subtitle": "DevOps Engineer specialized in CI/CD automation and AWS Cloud. Based in Chile and collaborating with teams in the United States, helping improve delivery pipelines, automate deployments, and build secure, reliable and reproducible infrastructure using IaC."
+    "subtitle": "DevOps engineer in Chile, helping U.S. teams automate their cloud deployments."
   },
+
   "about": {
-    "title": "About Me",
-    "body": "I'm a DevOps Engineer with over 4 years of experience working with companies in the United States (banking, enterprise platforms, and SaaS). I focus on automating processes, improving delivery workflows, and deploying efficient, secure and scalable cloud environments using DevOps best practices, containers and Terraform."
+    "title": "About me",
+    "body": "I'm a DevOps engineer based in Chile with experience working for U.S. banking and enterprise clients. I focus on CI/CD, automation with Python and Bash, and cloud environments (mainly AWS)."
   },
+
   "skills": {
-    "title": "Main Skills",
-    "item1": "CI/CD Pipelines with Jenkins, GitHub Actions, Tekton, TeamCity, and AWS CodePipeline.",
-    "item2": "AWS Cloud: Lambda, S3, EC2, CloudFront, API Gateway, DynamoDB, EKS/ECS.",
-    "item3": "Infrastructure as Code with Terraform and CloudFormation.",
-    "item4": "Containers & Orchestration: Docker, Kubernetes, and OpenShift.",
-    "item5": "Automation with Python and Bash for complex workflows and internal tooling.",
-    "item6": "Git & DevOps Practices: branching models, hooks, quality gates, and security scanning."
+    "title": "Core skills",
+    "item1": "CI/CD with Jenkins, Tekton, GitHub Actions and AWS CodePipeline.",
+    "item2": "AWS infrastructure (Lambda, S3, ECS/EKS, CloudFront, etc.).",
+    "item3": "Scripting with Python and Bash to automate repetitive work.",
+    "item4": "Containers (Docker) and deployments to Kubernetes/OpenShift."
   },
+
   "projects": {
     "title": "Projects",
-    "platformTitle": "Multi-environment CI/CD Platform",
-    "platformBody": "Complete automation of delivery pipelines from development to production: static code analysis, Docker packaging, deployments on Kubernetes/OpenShift, integration with quality gates and approval workflows. Reduced deployment times by 40–60%.",
-    "serverlessTitle": "Serverless Deployment Automation (AWS Lambda)",
-    "serverlessBody": "Automated pipelines for Lambda functions with testing, versioning, aliases and branch-based deployments. Faster and more reliable delivery with no manual steps.",
-    "portfolioTitle": "DevOps IaC Portfolio (this site)",
-    "portfolioBody": "Full AWS infrastructure defined with Terraform: private S3 bucket with OAC, CloudFront with HTTPS (ACM), custom domain on Route 53, and automatic deployment via CodeBuild on every push."
+    "platformTitle": "Multi-environment CI/CD platform",
+    "platformBody": "Design and automation of pipelines from development to production, including static code analysis, Docker image creation and automated deployments to Kubernetes.",
+    "serverlessTitle": "Serverless deployment automation",
+    "serverlessBody": "Implementation of pipelines for AWS Lambda functions with automated tests and branch-based deployments, reducing delivery time and manual errors."
   },
+
   "cicd": {
     "title": "CI/CD Demo",
-    "body1": "This demo shows a real CI/CD pipeline implemented on AWS. Every GitHub push triggers CodeBuild, which rebuilds and publishes the site to a private S3 bucket.",
-    "body2": "CloudFront uses an Origin Access Control (OAC) to securely access the bucket and deliver the website over global HTTPS caching.",
-    "body3": "The entire infrastructure is managed with Terraform to ensure reproducibility and Infrastructure-as-Code best practices."
+    "body1": "This section is wired to a pipeline that deploys this static site to S3 and CloudFront.",
+    "body2": "Every push to the main branch triggers a pipeline in AWS CodePipeline + CodeBuild.",
+    "body3": "In the future, I plan to extend this demo so that each deployment changes the theme or colors of the site, as a visual indicator of CI/CD in action."
   },
+
   "contact": {
     "title": "Contact",
     "email": "📧 Email: julioreyesrepiso@gmail.com",
     "linkedin": "🔗 LinkedIn: https://www.linkedin.com/in/julio-reyes-repiso-78a87454/",
-    "location": "📍 Location: Santiago, Chile — Open to remote roles in the United States",
-    "footer": "Portfolio built with real CI/CD, IaC and DevOps best practices."
+    "location": "📍 Location: Santiago, Chile (remote-friendly for USA / Latam)",
+    "footer": "Static portfolio built to showcase DevOps and CI/CD skills."
   },
+
   "footer": {
     "text": "© 2025 Julio Reyes - DevOps CI/CD Portfolio"
   }
