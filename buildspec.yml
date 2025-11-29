@@ -1,26 +1,10 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo "== Install phase =="
-      - echo "Using SITE_BUCKET_NAME=${SITE_BUCKET_NAME}"
-      - aws --version
-
   build:
     commands:
-      - echo "== Build phase: syncing static site to S3 =="
-      - echo "Current directory: $(pwd)"
+      - echo "== Build phase =="
+      - echo "Bucket: ${SITE_BUCKET_NAME}"
+      - pwd
       - ls -la
-      - aws s3 sync . s3://${SITE_BUCKET_NAME} \
-          --delete \
-          --exclude ".git/*" \
-          --exclude "infra/*" \
-          --exclude "README.md" \
-          --exclude "LICENSE" \
-          --exclude "buildspec.yml"
-
-artifacts:
-  files:
-    - '**/*'
-  base-directory: .
+      - aws s3 sync . s3://${SITE_BUCKET_NAME} --delete
