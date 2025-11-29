@@ -20,6 +20,9 @@ provider "aws" {
   region = "us-east-1"
 }
 
+# Identidad de la cuenta (para nombrar recursos, si hace falta)
+data "aws_caller_identity" "current" {}
+
 # ---------------------------
 # S3 Static Website Bucket
 # ---------------------------
@@ -62,6 +65,30 @@ resource "aws_s3_bucket_website_configuration" "site" {
 
   error_document {
     key = "index.html"
+  }
+}
+
+# ---------------------------
+# S3 Bucket para artefactos de CodePipeline
+# ---------------------------
+
+resource "aws_s3_bucket" "artifacts" {
+  bucket = "${var.project_name}-artifacts-${data.aws_caller_identity.current.account_id}"
+
+  tags = merge(
+    {
+      "Name"        = "${var.project_name}-artifacts"
+      "Environment" = "dev"
+    },
+    var.tags
+  )
+}
+
+resource "aws_s3_bucket_versioning" "artifacts" {
+  bucket = aws_s3_bucket.artifacts.id
+
+  versioning_configuration {
+    status = "Enabled"
   }
 }
 
@@ -112,7 +139,7 @@ data "aws_iam_policy_document" "codebuild_policy" {
     resources = ["*"]
   }
 
-  # Nivel bucket
+  # Bucket del sitio (nivel bucket)
   statement {
     sid    = "AllowS3PortfolioBucket"
     effect = "Allow"
@@ -128,7 +155,7 @@ data "aws_iam_policy_document" "codebuild_policy" {
     ]
   }
 
-  # Objetos
+  # Objetos del sitio
   statement {
     sid    = "AllowS3PortfolioObjects"
     effect = "Allow"
@@ -143,7 +170,38 @@ data "aws_iam_policy_document" "codebuild_policy" {
       "arn:aws:s3:::${var.site_bucket_name}/*"
     ]
   }
+
+  # Bucket de artefactos (nivel bucket)
+  statement {
+    sid    = "AllowS3ArtifactsBucket"
+    effect = "Allow"
+
+    actions = [
+      "s3:ListBucket",
+      "s3:GetBucketLocation"
+    ]
+
+    resources = [
+      aws_s3_bucket.artifacts.arn
+    ]
+  }
+
+  # Objetos de artefactos (para leer el SourceOutput)
+  statement {
+    sid    = "AllowS3ArtifactsObjects"
+    effect = "Allow"
+
+    actions = [
+      "s3:GetObject",
+      "s3:GetObjectVersion"
+    ]
+
+    resources = [
+      "${aws_s3_bucket.artifacts.arn}/*"
+    ]
+  }
 }
+
 
 resource "aws_iam_role_policy" "codebuild_inline" {
   name   = "${var.project_name}-codebuild-policy"
@@ -161,8 +219,9 @@ resource "aws_codebuild_project" "portfolio" {
   service_role  = aws_iam_role.codebuild_role.arn
   build_timeout = 10
 
+  # 👈 CAMBIO IMPORTANTE: artifacts desde CODEPIPELINE
   artifacts {
-    type = "NO_ARTIFACTS"
+    type = "CODEPIPELINE"
   }
 
   environment {
@@ -179,13 +238,22 @@ resource "aws_codebuild_project" "portfolio" {
     }
   }
 
+  # IMPORTANTE: CodePipeline será la fuente
   source {
-    type            = "GITHUB"
-    location        = "https://github.com/Julayo/portfolio-devops.git"
-    git_clone_depth = 1
+    type = "CODEPIPELINE"
   }
 
+  # Esta línea se ignora cuando el source es CODEPIPELINE,
+  # pero la dejamos para claridad.
   source_version = "main"
+
+  tags = merge(
+    {
+      "Name"        = "${var.project_name}-codebuild"
+      "Environment" = "dev"
+    },
+    var.tags
+  )
 }
 
 # ---------------------------
@@ -359,4 +427,156 @@ resource "aws_route53_record" "portfolio_alias" {
     zone_id                = aws_cloudfront_distribution.portfolio.hosted_zone_id
     evaluate_target_health = false
   }
+}
+
+# ---------------------------
+# IAM Role for CodePipeline
+# ---------------------------
+
+data "aws_iam_policy_document" "codepipeline_assume_role" {
+  statement {
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["codepipeline.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
+}
+
+data "aws_iam_policy_document" "codepipeline_policy" {
+  # Permisos sobre el bucket de artefactos
+  statement {
+    sid    = "AllowS3Artifacts"
+    effect = "Allow"
+
+    actions = [
+      "s3:GetObject",
+      "s3:GetObjectVersion",
+      "s3:PutObject"
+    ]
+
+    resources = [
+      "${aws_s3_bucket.artifacts.arn}/*"
+    ]
+  }
+
+  # Permisos para invocar CodeBuild
+  statement {
+    sid    = "AllowCodeBuild"
+    effect = "Allow"
+
+    actions = [
+      "codebuild:BatchGetBuilds",
+      "codebuild:StartBuild"
+    ]
+
+    resources = [
+      aws_codebuild_project.portfolio.arn
+    ]
+  }
+
+  # Permiso para usar la CodeStar Connection (GitHub)
+  statement {
+    sid    = "AllowUseConnection"
+    effect = "Allow"
+
+    actions = [
+      "codestar-connections:UseConnection"
+    ]
+
+    resources = [
+      aws_codestarconnections_connection.github.arn
+    ]
+  }
+}
+
+
+resource "aws_iam_role" "codepipeline_role" {
+  name               = "${var.project_name}-codepipeline-role"
+  assume_role_policy = data.aws_iam_policy_document.codepipeline_assume_role.json
+
+  tags = merge(
+    {
+      "Name"        = "${var.project_name}-codepipeline-role"
+      "Environment" = "dev"
+    },
+    var.tags
+  )
+}
+
+resource "aws_iam_role_policy" "codepipeline_inline" {
+  name   = "${var.project_name}-codepipeline-policy"
+  role   = aws_iam_role.codepipeline_role.name
+  policy = data.aws_iam_policy_document.codepipeline_policy.json
+}
+
+# ---------------------------
+# CodeStar Connection (GitHub)
+# ---------------------------
+
+resource "aws_codestarconnections_connection" "github" {
+  name          = "github-julayo-portfolio"
+  provider_type = "GitHub"
+}
+
+# ---------------------------
+# CodePipeline (GitHub → CodeBuild)
+# ---------------------------
+
+resource "aws_codepipeline" "portfolio" {
+  name     = "${var.project_name}-pipeline"
+  role_arn = aws_iam_role.codepipeline_role.arn
+
+  artifact_store {
+    type     = "S3"
+    location = aws_s3_bucket.artifacts.bucket
+  }
+
+  stage {
+    name = "Source"
+
+    action {
+      name             = "Source"
+      category         = "Source"
+      owner            = "AWS"
+      provider         = "CodeStarSourceConnection"
+      version          = "1"
+      output_artifacts = ["SourceOutput"]
+
+      configuration = {
+        ConnectionArn    = aws_codestarconnections_connection.github.arn
+        FullRepositoryId = "Julayo/portfolio-devops"
+        BranchName       = "main"
+      }
+    }
+  }
+
+  stage {
+    name = "Build"
+
+    action {
+      name             = "Build"
+      category         = "Build"
+      owner            = "AWS"
+      provider         = "CodeBuild"
+      input_artifacts  = ["SourceOutput"]
+      output_artifacts = []
+      version          = "1"
+
+      configuration = {
+        ProjectName = aws_codebuild_project.portfolio.name
+      }
+    }
+  }
+
+  tags = merge(
+    {
+      "Name"        = "${var.project_name}-pipeline"
+      "Environment" = "dev"
+    },
+    var.tags
+  )
 }
