@@ -3,8 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo "== Build phase =="
-      - echo "Bucket: ${SITE_BUCKET_NAME}"
-      - pwd
-      - ls -la
-      - aws s3 sync . s3://${SITE_BUCKET_NAME} --delete
+      - "echo == Build phase =="
+      - "echo Bucket: ${SITE_BUCKET_NAME}"
+      - "pwd"
+      - "ls -la"
+      - "aws s3 sync . s3://${SITE_BUCKET_NAME} --delete"
