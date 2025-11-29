@@ -1,14 +1,24 @@
 output "site_bucket_name" {
-  description = "Nombre del bucket S3 donde se aloja el sitio."
-  value       = aws_s3_bucket.site.bucket
+  value       = aws_s3_bucket.site.id
+  description = "Nombre del bucket S3 del sitio estático."
 }
 
 output "site_website_endpoint" {
-  description = "Endpoint de website S3 (útil para pruebas sin CloudFront)."
   value       = aws_s3_bucket_website_configuration.site.website_endpoint
+  description = "Endpoint de website S3 (solo interno, el público será CloudFront)."
 }
 
-output "codebuild_project_name" {
-  description = "Nombre del proyecto de CodeBuild que construye/despliega el sitio."
-  value       = aws_codebuild_project.portfolio.name
+output "cloudfront_domain_name" {
+  value       = aws_cloudfront_distribution.portfolio.domain_name
+  description = "Dominio de CloudFront para el portfolio."
+}
+
+output "cloudfront_distribution_id" {
+  value       = aws_cloudfront_distribution.portfolio.id
+  description = "ID de la distribución CloudFront."
+}
+
+output "custom_domain_url" {
+  value       = "https://${var.domain_name}"
+  description = "URL pública del portfolio."
 }

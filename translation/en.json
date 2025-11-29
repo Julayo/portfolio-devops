@@ -1,43 +1,53 @@
 {
   "siteTitle": "DevOps CI/CD Portfolio",
-
-  "nav.home": "Home",
-  "nav.about": "About",
-  "nav.skills": "Skills",
-  "nav.projects": "Projects",
-  "nav.cicd": "CI/CD Demo",
-  "nav.contact": "Contact",
-
-  "home.title": "Hi, I'm Julio Reyes",
-  "home.subtitle": "DevOps Engineer based in Chile, helping US teams automate their cloud deployments.",
-
-  "about.title": "About Me",
-  "about.body": "I am a DevOps Engineer in Chile, with experience working for clients in the United States. I specialize in CI/CD, Python automation, and cloud environments (mainly AWS).",
-
-  "skills.title": "Core Skills",
-  "skills.item1": "CI/CD with Jenkins, Tekton, GitHub Actions and AWS CodePipeline.",
-  "skills.item2": "Infrastructure on AWS (Lambda, S3, ECS/EKS, CloudFront, etc.).",
-  "skills.item3": "Scripting with Python and Bash to automate tasks.",
-  "skills.item4": "Containers (Docker) and deployments on Kubernetes/OpenShift.",
-
-  "projects.title": "Projects",
-
-  "projects.platformTitle": "Multi-environment CI/CD Platform",
-  "projects.platformBody": "Design and automation of pipelines from development to production, including static code analysis, Docker image creation and automated deployments to Kubernetes.",
-
-  "projects.serverlessTitle": "Serverless Deployment Automation",
-  "projects.serverlessBody": "Implementation of pipelines for Lambda functions with automated tests and branch-based deployments, reducing delivery time and manual errors.",
-
-  "cicd.title": "CI/CD Demo",
-  "cicd.body1": "This section is designed to connect to a pipeline that changes the site's theme or colors on each deployment.",
-  "cicd.body2": "Connected pipeline (placeholder). Current environment: Local demo.",
-  "cicd.body3": "The idea is that, in production, a pipeline in AWS (for example with CodePipeline + CodeBuild + Lambda) can update this site and reflect simple visual changes (such as theme color) to demonstrate the CI/CD flow.",
-
-  "contact.title": "Contact",
-  "contact.email": "📧 Email: your-professional-email@example.com",
-  "contact.linkedin": "🔗 LinkedIn: linkedin.com/in/your-profile",
-  "contact.location": "📍 Location: Santiago, Chile (available for remote roles in USA / Latam)",
-  "contact.footer": "Portfolio built as a static site to demonstrate DevOps/CI-CD skills.",
-
-  "footer.text": "© 2025 Julio Reyes - DevOps CI/CD Portfolio"
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "cicd": "CI/CD Demo",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Hi, I'm Julio Reyes",
+    "subtitle": "DevOps Engineer specialized in CI/CD automation and AWS Cloud. Based in Chile and collaborating with teams in the United States, helping improve delivery pipelines, automate deployments, and build secure, reliable and reproducible infrastructure using IaC."
+  },
+  "about": {
+    "title": "About Me",
+    "body": "I'm a DevOps Engineer with over 4 years of experience working with companies in the United States (banking, enterprise platforms, and SaaS). I focus on automating processes, improving delivery workflows, and deploying efficient, secure and scalable cloud environments using DevOps best practices, containers and Terraform."
+  },
+  "skills": {
+    "title": "Main Skills",
+    "item1": "CI/CD Pipelines with Jenkins, GitHub Actions, Tekton, TeamCity, and AWS CodePipeline.",
+    "item2": "AWS Cloud: Lambda, S3, EC2, CloudFront, API Gateway, DynamoDB, EKS/ECS.",
+    "item3": "Infrastructure as Code with Terraform and CloudFormation.",
+    "item4": "Containers & Orchestration: Docker, Kubernetes, and OpenShift.",
+    "item5": "Automation with Python and Bash for complex workflows and internal tooling.",
+    "item6": "Git & DevOps Practices: branching models, hooks, quality gates, and security scanning."
+  },
+  "projects": {
+    "title": "Projects",
+    "platformTitle": "Multi-environment CI/CD Platform",
+    "platformBody": "Complete automation of delivery pipelines from development to production: static code analysis, Docker packaging, deployments on Kubernetes/OpenShift, integration with quality gates and approval workflows. Reduced deployment times by 40–60%.",
+    "serverlessTitle": "Serverless Deployment Automation (AWS Lambda)",
+    "serverlessBody": "Automated pipelines for Lambda functions with testing, versioning, aliases and branch-based deployments. Faster and more reliable delivery with no manual steps.",
+    "portfolioTitle": "DevOps IaC Portfolio (this site)",
+    "portfolioBody": "Full AWS infrastructure defined with Terraform: private S3 bucket with OAC, CloudFront with HTTPS (ACM), custom domain on Route 53, and automatic deployment via CodeBuild on every push."
+  },
+  "cicd": {
+    "title": "CI/CD Demo",
+    "body1": "This demo shows a real CI/CD pipeline implemented on AWS. Every GitHub push triggers CodeBuild, which rebuilds and publishes the site to a private S3 bucket.",
+    "body2": "CloudFront uses an Origin Access Control (OAC) to securely access the bucket and deliver the website over global HTTPS caching.",
+    "body3": "The entire infrastructure is managed with Terraform to ensure reproducibility and Infrastructure-as-Code best practices."
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "📧 Email: julioreyesrepiso@gmail.com",
+    "linkedin": "🔗 LinkedIn: https://www.linkedin.com/in/julio-reyes-repiso-78a87454/",
+    "location": "📍 Location: Santiago, Chile — Open to remote roles in the United States",
+    "footer": "Portfolio built with real CI/CD, IaC and DevOps best practices."
+  },
+  "footer": {
+    "text": "© 2025 Julio Reyes - DevOps CI/CD Portfolio"
+  }
 }
