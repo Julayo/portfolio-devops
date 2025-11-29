@@ -1,0 +1,48 @@
+version: 0.2
+
+env:
+  variables:
+    # Directorio donde vive el sitio estático dentro del repo
+    SITE_SOURCE_DIR: "."
+
+phases:
+  install:
+    commands:
+      - echo "Install phase - printing versions"
+      - node --version || echo "Node not installed (not required)"
+      - python --version || echo "Python not installed (not required)"
+      - aws --version
+  pre_build:
+    commands:
+      - echo "Pre-build phase - validating environment"
+      - if [ -z "$TARGET_BUCKET" ]; then echo "ERROR: TARGET_BUCKET env var is not set"; exit 1; fi
+      - echo "Deploying to S3 bucket: $TARGET_BUCKET"
+  build:
+    commands:
+      - echo "Build phase - preparing static files"
+      - cd "$SITE_SOURCE_DIR"
+      - echo "Current directory:" $(pwd)
+      - echo "Listing source files:"
+      - ls -R
+
+      # Sin compilación porque es sitio estático puro.
+      # Si después agregas tooling (parcel, vite, etc.), aquí iría el build.
+
+      - echo "Syncing site to S3..."
+      - aws s3 sync . "s3://$TARGET_BUCKET" \
+          --delete \
+          --exclude ".git/*" \
+          --exclude ".github/*" \
+          --exclude "infra/*" \
+          --exclude "buildspec.yml" \
+          --exclude "README.md"
+
+  post_build:
+    commands:
+      - echo "Post-build phase - deployment finished"
+      - echo "Site should now be updated in bucket: $TARGET_BUCKET"
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no

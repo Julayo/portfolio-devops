@@ -203,3 +203,5 @@ body {
         font-size: 0.85rem;
     }
 }
+
+.lang-active { text-decoration: underline; font-weight: 600; }

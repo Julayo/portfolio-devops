@@ -1,88 +1,52 @@
-# DevOps Portfolio Website
+# DevOps CI/CD Portfolio – Julio Reyes
 
-A clean, fast, and fully extensible DevOps portfolio site built to showcase my experience in Cloud, CI/CD, Automation, and Infrastructure Engineering.  
-This is the first minimal version, designed with scalability in mind and ready to integrate into a complete AWS-powered deployment pipeline.
+Static, bilingual (EN/ES) portfolio site built to showcase my experience as a **DevOps Engineer** focused on **CI/CD, AWS and automation**.
 
----
+The goal of this repo is twofold:
 
-## 🚀 Overview
-
-This site introduces who I am as a DevOps Engineer and provides a foundation for future enhancements such as automated deployments, dynamic content, and project showcases.  
-It is intentionally lightweight (HTML, CSS, JS) to keep performance high while being simple to iterate on.
-
-Future versions will integrate a modern CI/CD pipeline using AWS services and demonstrate real-world automation practices.
+1. Present my profile, skills and projects in a clear, recruiter-friendly way.  
+2. Serve as a living example of how I structure and automate a simple front-end deployment pipeline in the cloud.
 
 ---
 
-## 🔧 Tech Snapshot
+## 🔍 Tech Overview
 
-- **HTML5 / CSS3 / Vanilla JS**  
-- **Bilingual content (EN/ES)**  
-- **Emoji-based language switcher**  
-- **Modular translation system (JSON)**  
-- **GitHub repository for version control**  
-- **Ready for AWS S3, CloudFront, Lambda, CodeBuild, and CodePipeline**
-
----
-
-## 🧩 Why This Repo Exists
-
-Recruiters and companies often want:
-- A **quick, clear view** of your skills  
-- A **demonstration of how you build and automate**  
-- A **tangible artifact** of your DevOps mindset  
-
-This repo is that starting point.  
-The upcoming CI/CD pipeline and automation around this site will act as a practical example of how I work.
+- **Frontend**:  
+  - Pure HTML, CSS and vanilla JavaScript  
+  - Bilingual content (English / Spanish) via JSON translation files  
+- **CI/CD Target** (design goal):  
+  - Source: GitHub  
+  - Build & Deploy: AWS CodeBuild  
+  - Hosting: S3 static website (optionally fronted by CloudFront)  
+- **Cloud & DevOps Skills Demonstrated**:
+  - S3 static hosting
+  - AWS CodeBuild buildspec
+  - Ready to plug into CodePipeline for full CI/CD
 
 ---
 
-## 📁 Current Structure
-root/
-├── index.html
-├── styles.css
-├── lang.js
-├── translation/
-│ ├── en.json
-│ └── es.json
-└── assets/
+## 🌐 Bilingual UX (EN / ES)
 
+The site supports **two languages**: English and Spanish.
 
----
+### How it works
 
-## 🏗️ Roadmap (Next Iterations)
+- Language switcher in the header with flag emojis:
+  - 🇺🇸 EN
+  - 🇨🇱 ES
+- Text content is not hard-coded: instead, it uses **translation keys** via `data-i18n` attributes in the HTML, for example:
 
-### 🌐 Website Features
-- [ ] Add project cards with filters (AWS, CI/CD, Python, etc.)
-- [ ] Add dark/light mode
-- [ ] Add animations and improved UI/UX
+  ```html
+  <h1 data-i18n="home.title">Hola, soy Julio Reyes</h1>
 
-### 🔧 DevOps & Automation
-- [ ] Set up CodePipeline → CodeBuild → S3/CloudFront deployment
-- [ ] Deploy Lambda-powered contact form
-- [ ] Add automated visual regression checks
-- [ ] Integrate version bumping and auto-tagging
+- Actual strings live in JSON files:
+    translation/
+    ├── en.json
+    └── es.json
 
-### 📄 Content
-- [ ] Add detailed project case studies  
-- [ ] Add AWS and DevOps certifications section  
-- [ ] Add downloadable PDF résumé  
-- [ ] Add “What I'm currently building” mini-section
+-A small JavaScript controller js/lang.js:
+    - Loads en.json or es.json on demand.
+    - Replaces the textContent of all elements that have data-i18n="some.key".
+    - Marks the active language button with a CSS class (.lang-active).
 
----
-
-👋 About Me
-
-I’m a DevOps Engineer with experience in:
-
-Cloud infrastructure (AWS)
-
-CI/CD automation (CodePipeline, Jenkins, Tekton, TeamCity, etc.)
-
-Scripting (Python, Bash)
-
-Containers & Orchestration (Docker, Kubernetes/OpenShift)
-
-Release engineering and deployment automation
-
-This portfolio is part of my ongoing effort to consolidate my skills into a clean, accessible, and technically sound presentation.
+This pattern keeps the HTML clean and makes it easy to add more languages or update text without touching the structure.
