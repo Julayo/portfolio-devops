@@ -2,28 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Portafolio DevOps CI/CD - Julio Reyes</title>
+    <title>DevOps CI/CD Portfolio - Julio Reyes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Estilos -->
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="top-bar">
-    <!-- Switch de idioma -->
-    <div class="lang-switcher">
-        <button type="button" class="lang-btn" data-lang="es" aria-label="Español">🇨🇱 ES</button>
-        <button type="button" class="lang-btn" data-lang="en" aria-label="English">🇺🇸 EN</button>
-    </div>
-
     <div class="logo">
         &lt;/&gt; <span data-i18n="siteTitle">DevOps CI/CD Portfolio</span>
+    </div>
+
+    <!-- Language switcher -->
+    <div class="lang-switcher">
+        <button type="button" class="lang-btn" data-lang="es" aria-label="Español">
+            🇨🇱 ES
+        </button>
+        <button type="button" class="lang-btn" data-lang="en" aria-label="English">
+            🇺🇸 EN
+        </button>
     </div>
 </header>
 
 <nav class="main-nav">
     <a href="#home" data-i18n="nav.home">Home</a>
-    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#about" data-i18n="nav.about">About me</a>
     <a href="#skills" data-i18n="nav.skills">Skills</a>
     <a href="#projects" data-i18n="nav.projects">Projects</a>
     <a href="#cicd" data-i18n="nav.cicd">CI/CD Demo</a>
@@ -35,39 +39,40 @@
     <section id="home" class="section">
         <h1 data-i18n="home.title">Hi, I'm Julio Reyes</h1>
         <p data-i18n="home.subtitle">
-            DevOps engineer in Chile, helping U.S. teams automate their cloud deployments.
+            DevOps engineer based in Chile, helping U.S. teams automate their cloud deployments.
         </p>
     </section>
 
-    <!-- SOBRE MÍ -->
+    <!-- ABOUT -->
     <section id="about" class="section">
         <h2 data-i18n="about.title">About me</h2>
         <p data-i18n="about.body">
-            I'm a DevOps engineer based in Chile with experience working for U.S. banking and enterprise clients.
-            I focus on CI/CD, automation with Python and Bash, and cloud environments (mainly AWS).
+            I'm a DevOps engineer in Chile with experience working for U.S. banking and enterprise
+            clients. I focus on CI/CD, automation with Python, and cloud environments
+            (mainly AWS).
         </p>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="section">
-        <h2 data-i18n="skills.title">Core skills</h2>
+        <h2 data-i18n="skills.title">Key skills</h2>
         <ul class="list">
             <li data-i18n="skills.item1">
-                CI/CD with Jenkins, Tekton, GitHub Actions and AWS CodePipeline.
+                CI/CD with Jenkins, Tekton, GitHub Actions, AWS CodePipeline and CodeBuild.
             </li>
             <li data-i18n="skills.item2">
-                AWS infrastructure (Lambda, S3, ECS/EKS, CloudFront, etc.).
+                AWS infrastructure (Lambda, S3, CloudFront, ECS/EKS, networking, IAM basics).
             </li>
             <li data-i18n="skills.item3">
-                Scripting with Python and Bash to automate repetitive work.
+                Automation with Python and Bash for build, deploy, and housekeeping tasks.
             </li>
             <li data-i18n="skills.item4">
-                Containers (Docker) and deployments to Kubernetes/OpenShift.
+                Containers with Docker and deployments to Kubernetes/OpenShift.
             </li>
         </ul>
     </section>
 
-    <!-- PROYECTOS -->
+    <!-- PROJECTS -->
     <section id="projects" class="section">
         <h2 data-i18n="projects.title">Projects</h2>
 
@@ -75,35 +80,37 @@
             Multi-environment CI/CD platform
         </h3>
         <p data-i18n="projects.platformBody">
-            Design and automation of pipelines from development to production, including static code analysis,
-            Docker image creation and automated deployments to Kubernetes.
+            Design and automation of pipelines from development to production, including static
+            code analysis, Docker image build, and automated deployments to Kubernetes/OpenShift.
         </p>
 
         <h3 data-i18n="projects.serverlessTitle">
             Serverless deployment automation
         </h3>
         <p data-i18n="projects.serverlessBody">
-            Implementation of pipelines for AWS Lambda functions with automated tests and branch-based deployments,
-            reducing delivery time and manual errors.
+            Implementation of pipelines for AWS Lambda functions with automated tests and
+            branch-based deployments, reducing lead time and manual errors in releases.
         </p>
     </section>
 
     <!-- CI/CD DEMO -->
     <section id="cicd" class="section">
-        <h2 data-i18n="cicd.title">CI/CD Demo</h2>
+        <h2 data-i18n="cicd.title">CI/CD Demo (this site)</h2>
         <p data-i18n="cicd.body1">
-            This section is wired to a pipeline that deploys this static site to S3 and CloudFront.
+            This portfolio is deployed as a static site in S3, fronted by CloudFront and a custom
+            domain managed in Route&nbsp;53.
         </p>
         <p data-i18n="cicd.body2">
-            Every push to the main branch triggers a pipeline in AWS CodePipeline + CodeBuild.
+            A CodePipeline pipeline pulls changes from GitHub, runs a CodeBuild project, and
+            syncs the site to the S3 bucket.
         </p>
         <p data-i18n="cicd.body3">
-            In the future, I plan to extend this demo so that each deployment changes the theme or colors of the site,
-            as a visual indicator of CI/CD in action.
+            For demo purposes, I can use this pipeline to introduce small visual changes
+            (for example, theme or layout tweaks) on each deployment and track them in Git.
         </p>
     </section>
 
-    <!-- CONTACTO -->
+    <!-- CONTACT -->
     <section id="contact" class="section">
         <h2 data-i18n="contact.title">Contact</h2>
         <ul class="contact-list">
@@ -114,10 +121,10 @@
                 🔗 LinkedIn: linkedin.com/in/your-profile
             </li>
             <li data-i18n="contact.location">
-                📍 Location: Santiago, Chile (remote-friendly for USA / Latam)
+                📍 Location: Santiago, Chile (open to remote roles for USA / LatAm)
             </li>
             <li data-i18n="contact.footer">
-                Static portfolio built to showcase DevOps and CI/CD skills.
+                Static portfolio built to showcase DevOps / CI-CD skills on AWS.
             </li>
         </ul>
     </section>

@@ -12,35 +12,35 @@
 
   "home": {
     "title": "Hola, soy Julio Reyes",
-    "subtitle": "Ingeniero DevOps en Chile, apoyando a equipos de Estados Unidos a automatizar sus despliegues en la nube."
+    "subtitle": "Ingeniero DevOps en Chile, ayudando a equipos de Estados Unidos a automatizar sus despliegues en la nube."
   },
 
   "about": {
     "title": "Sobre mí",
-    "body": "Soy ingeniero DevOps en Chile, con experiencia trabajando para clientes del sector bancario y empresas en Estados Unidos. Me enfoco en CI/CD, automatización con Python y Bash, y entornos en la nube (principalmente AWS)."
+    "body": "Soy ingeniero DevOps en Chile, con experiencia trabajando para clientes bancarios y empresas de Estados Unidos. Me especializo en CI/CD, automatización con Python y entornos en la nube (principalmente AWS)."
   },
 
   "skills": {
     "title": "Skills principales",
-    "item1": "CI/CD con Jenkins, Tekton, GitHub Actions y AWS CodePipeline.",
-    "item2": "Infraestructura en AWS (Lambda, S3, ECS/EKS, CloudFront, etc.).",
-    "item3": "Scripting con Python y Bash para automatizar tareas repetitivas.",
-    "item4": "Contenedores (Docker) y despliegues en Kubernetes/OpenShift."
+    "item1": "CI/CD con Jenkins, Tekton, GitHub Actions, AWS CodePipeline y CodeBuild.",
+    "item2": "Infraestructura en AWS (Lambda, S3, CloudFront, ECS/EKS, networking, IAM básico).",
+    "item3": "Automatización con Python y Bash para build, deploy y tareas de mantenimiento.",
+    "item4": "Contenedores con Docker y despliegues en Kubernetes/OpenShift."
   },
 
   "projects": {
     "title": "Proyectos",
     "platformTitle": "Plataforma CI/CD multi-entorno",
-    "platformBody": "Diseño y automatización de pipelines desde desarrollo hasta producción, incorporando análisis estático de código, creación de imágenes Docker y despliegues automatizados en Kubernetes.",
+    "platformBody": "Diseño y automatización de pipelines desde desarrollo hasta producción, incluyendo análisis estático de código, construcción de imágenes Docker y despliegues automatizados en Kubernetes/OpenShift.",
     "serverlessTitle": "Automatización de despliegues serverless",
-    "serverlessBody": "Implementación de pipelines para funciones AWS Lambda con pruebas automatizadas y despliegues controlados por rama, reduciendo el tiempo de entrega y errores manuales."
+    "serverlessBody": "Implementación de pipelines para funciones AWS Lambda con pruebas automatizadas y despliegues controlados por rama, reduciendo el tiempo de entrega y los errores manuales en los releases."
   },
 
   "cicd": {
-    "title": "Demo CI/CD",
-    "body1": "Esta sección está conectada a un pipeline que despliega este sitio estático a S3 y CloudFront.",
-    "body2": "Cada push a la rama main dispara un pipeline en AWS CodePipeline + CodeBuild.",
-    "body3": "A futuro quiero extender esta demo para que cada despliegue cambie el tema o colores del sitio, como indicador visual del flujo de CI/CD."
+    "title": "Demo CI/CD (este sitio)",
+    "body1": "Este portafolio se despliega como sitio estático en S3, usando CloudFront y un dominio custom gestionado en Route 53.",
+    "body2": "Un pipeline de CodePipeline toma los cambios desde GitHub, ejecuta un proyecto de CodeBuild y sincroniza el sitio con el bucket S3.",
+    "body3": "Para fines de demo, puedo usar este pipeline para introducir pequeños cambios visuales (por ejemplo, tema o ajustes de layout) en cada despliegue y rastrearlos en Git."
   },
 
   "contact": {
@@ -48,7 +48,7 @@
     "email": "📧 Email: julioreyesrepiso@gmail.com",
     "linkedin": "🔗 LinkedIn: https://www.linkedin.com/in/julio-reyes-repiso-78a87454/",
     "location": "📍 Ubicación: Santiago, Chile (disponible remoto para USA / Latam)",
-    "footer": "Portafolio estático creado para demostrar habilidades de DevOps y CI/CD."
+    "footer": "Portafolio estático construido para demostrar skills de DevOps / CI-CD en AWS."
   },
 
   "footer": {
