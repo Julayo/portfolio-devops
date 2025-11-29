@@ -4,7 +4,7 @@ phases:
   build:
     commands:
       - "echo == Build phase =="
-      - "echo Bucket: ${SITE_BUCKET_NAME}"
+      - "echo Bucket: ${TARGET_BUCKET}"
       - "pwd"
       - "ls -la"
-      - "aws s3 sync . s3://${SITE_BUCKET_NAME} --delete"
+      - "aws s3 sync . s3://${TARGET_BUCKET} --delete"
