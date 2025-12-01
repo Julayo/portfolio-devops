@@ -204,4 +204,33 @@ body {
     }
 }
 
+.section {
+  margin: 3rem auto;
+  max-width: 1000px;
+  padding: 0 1.5rem;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.diagram-container {
+  margin: 1.5rem 0 3rem 0;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.7); /* ajusta según tu tema */
+  overflow-x: auto;
+}
+
+.diagram-container .mermaid {
+  min-width: 320px;
+}
+
+
 .lang-active { text-decoration: underline; font-weight: 600; }
