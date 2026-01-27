@@ -11,8 +11,12 @@
   },
 
   "home": {
-    "title": "Hola, soy Julio Reyes",
-    "subtitle": "Ingeniero DevOps en Chile, ayudando a equipos de Estados Unidos a automatizar sus despliegues en la nube."
+    "title": "julayo@dev:~$ whoami",
+    "subtitle": "Ingeniero DevOps / Platform (AWS • Terraform • CI/CD • Kubernetes)",
+    "line3": "Construyo sistemas calmados y observables donde los despliegues no se sienten como una apuesta.",
+    "cmdProjects": "> ls projects/",
+    "cmdAbout": "> cat about.txt",
+    "cmdResume": "> open resume.pdf"
   },
 
   "about": {
@@ -30,10 +34,31 @@
 
   "projects": {
     "title": "Proyectos",
+    "directoryTitle": "proyectos/",
+    "linkGithub": "GitHub",
+    "linkDemo": "Demo",
+    "item1": {
+      "name": "deletefrom-assistant/",
+      "desc": "SaaS multi-tenant de PDF + chatbot (AWS)"
+    },
+    "item2": {
+      "name": "biocloud-ai/",
+      "desc": "experimentos/herramientas LLM"
+    },
+    "item3": {
+      "name": "coni-app/",
+      "desc": "app móvil de preguntas rituales"
+    },
     "platformTitle": "Plataforma CI/CD multi-entorno",
     "platformBody": "Diseño y automatización de pipelines desde desarrollo hasta producción, incluyendo análisis estático de código, construcción de imágenes Docker y despliegues automatizados en Kubernetes/OpenShift.",
     "serverlessTitle": "Automatización de despliegues serverless",
     "serverlessBody": "Implementación de pipelines para funciones AWS Lambda con pruebas automatizadas y despliegues controlados por rama, reduciendo el tiempo de entrega y los errores manuales en los releases."
+  },
+  "architecture": {
+    "title": "Arquitectura",
+    "subtitle": "Este portafolio se despliega usando AWS serverless y CI/CD. Abajo puedes ver como encajan las piezas.",
+    "awsTitle": "Arquitectura del portafolio en AWS",
+    "pipelineTitle": "Pipeline CI/CD"
   },
 
   "cicd": {

@@ -15,7 +15,7 @@
     </div>
 
     <!-- Language switcher -->
-    <div class="lang-switcher">
+    <div class="lang-switcher" role="group" aria-label="Language switcher">
         <button type="button" class="lang-btn" data-lang="es" aria-label="Español">
             🇨🇱 ES
         </button>
@@ -25,7 +25,7 @@
     </div>
 </header>
 
-<nav class="main-nav">
+<nav class="main-nav" aria-label="Primary">
     <a href="#home" data-i18n="nav.home">Home</a>
     <a href="#about" data-i18n="nav.about">About me</a>
     <a href="#skills" data-i18n="nav.skills">Skills</a>
@@ -37,10 +37,22 @@
 <main class="content">
     <!-- HOME -->
     <section id="home" class="section">
-        <h1 data-i18n="home.title">Hi, I'm Julio Reyes</h1>
-        <p data-i18n="home.subtitle">
-            DevOps engineer based in Chile, helping U.S. teams automate their cloud deployments.
-        </p>
+        <div class="terminal-hero">
+            <h1 class="prompt-line">
+                <span data-i18n="home.title">julayo@dev:~$ whoami</span><span class="cursor" aria-hidden="true">█</span>
+            </h1>
+            <p class="hero-line" data-i18n="home.subtitle">
+                DevOps / Platform Engineer (AWS • Terraform • CI/CD • Kubernetes)
+            </p>
+            <p class="hero-line muted" data-i18n="home.line3">
+                I build calm, observable systems where deploys don’t feel like gambling.
+            </p>
+            <div class="hero-commands" aria-label="Quick commands">
+                <a href="#projects" data-i18n="home.cmdProjects">&gt; ls projects/</a>
+                <a href="#about" data-i18n="home.cmdAbout">&gt; cat about.txt</a>
+                <a href="#contact" data-i18n="home.cmdResume">&gt; open resume.pdf</a>
+            </div>
+        </div>
     </section>
 
     <!-- ABOUT -->
@@ -52,54 +64,55 @@
             (mainly AWS).
         </p>
     </section>
+
     <section id="architecture" class="section">
-  <h2>Architecture</h2>
-  <p class="section-subtitle">
-    This portfolio is deployed using AWS serverless and CI/CD. Below you can see how the pieces fit together.
-  </p>
+        <h2 data-i18n="architecture.title">Architecture</h2>
+        <p class="section-subtitle" data-i18n="architecture.subtitle">
+            This portfolio is deployed using AWS serverless and CI/CD. Below you can see how the pieces fit together.
+        </p>
 
-  <h3>AWS Portfolio Architecture</h3>
-  <div class="diagram-container">
-    <div class="mermaid">
-      graph TD
-        U[User / Recruiter<br/>Browser] -->|HTTPS| CF[CloudFront<br/>CDN]
-        CF -->|Static assets| S3[(S3 Portfolio Bucket)]
-        CF -->|Optional dynamic content| L[Lambda Function<br/>API / Backend]
+        <h3 data-i18n="architecture.awsTitle">AWS Portfolio Architecture</h3>
+        <div class="diagram-container">
+            <div class="mermaid">
+              graph TD
+                U[User / Recruiter<br/>Browser] -->|HTTPS| CF[CloudFront<br/>CDN]
+                CF -->|Static assets| S3[(S3 Portfolio Bucket)]
+                CF -->|Optional dynamic content| L[Lambda Function<br/>API / Backend]
 
-        subgraph AWS["AWS Account (Portfolio)"]
-          CF
-          S3
-          L
-        end
-    </div>
-  </div>
+                subgraph AWS["AWS Account (Portfolio)"]
+                  CF
+                  S3
+                  L
+                end
+            </div>
+        </div>
 
-  <h3>CI/CD Pipeline</h3>
-  <div class="diagram-container">
-    <div class="mermaid">
-      graph LR
-        Dev[You<br/>DevOps Engineer] -->|git push| GH[GitHub Repo<br/>portfolio-devops]
-        GH -->|webhook| CP[CodePipeline]
+        <h3 data-i18n="architecture.pipelineTitle">CI/CD Pipeline</h3>
+        <div class="diagram-container">
+            <div class="mermaid">
+              graph LR
+                Dev[You<br/>DevOps Engineer] -->|git push| GH[GitHub Repo<br/>portfolio-devops]
+                GH -->|webhook| CP[CodePipeline]
 
-        subgraph PIPELINE["AWS CodePipeline"]
-          CP --> SRC[Source Stage<br/>GitHub]
-          SRC --> BLD[Build Stage<br/>CodeBuild]
-          BLD --> ART[(S3 Artifacts Bucket)]
-          BLD --> DEPLOY[Deploy Stage<br/>Sync to S3 Bucket]
-          DEPLOY --> INV[CloudFront Invalidation]
-        end
+                subgraph PIPELINE["AWS CodePipeline"]
+                  CP --> SRC[Source Stage<br/>GitHub]
+                  SRC --> BLD[Build Stage<br/>CodeBuild]
+                  BLD --> ART[(S3 Artifacts Bucket)]
+                  BLD --> DEPLOY[Deploy Stage<br/>Sync to S3 Bucket]
+                  DEPLOY --> INV[CloudFront Invalidation]
+                end
 
-        DEPLOY --> S3WWW[(S3 Portfolio Bucket)]
-        S3WWW --> CF2[CloudFront Distribution]
-        CF2 --> User2[Visitors<br/>Web Browser]
-    </div>
-  </div>
-</section>
+                DEPLOY --> S3WWW[(S3 Portfolio Bucket)]
+                S3WWW --> CF2[CloudFront Distribution]
+                CF2 --> User2[Visitors<br/>Web Browser]
+            </div>
+        </div>
+    </section>
 
     <!-- SKILLS -->
     <section id="skills" class="section">
         <h2 data-i18n="skills.title">Key skills</h2>
-        <ul class="list">
+        <ul class="list rows">
             <li data-i18n="skills.item1">
                 CI/CD with Jenkins, Tekton, GitHub Actions, AWS CodePipeline and CodeBuild.
             </li>
@@ -117,23 +130,42 @@
 
     <!-- PROJECTS -->
     <section id="projects" class="section">
-        <h2 data-i18n="projects.title">Projects</h2>
+        <div class="section-title-row">
+            <h2 data-i18n="projects.title">Projects</h2>
+            <span class="dir-label" data-i18n="projects.directoryTitle">projects/</span>
+        </div>
 
-        <h3 data-i18n="projects.platformTitle">
-            Multi-environment CI/CD platform
-        </h3>
-        <p data-i18n="projects.platformBody">
-            Design and automation of pipelines from development to production, including static
-            code analysis, Docker image build, and automated deployments to Kubernetes/OpenShift.
-        </p>
+        <div class="project-list">
+            <div class="project-row">
+                <div class="project-main">
+                    <span class="project-name" data-i18n="projects.item1.name">deletefrom-assistant/</span>
+                    <span class="project-desc" data-i18n="projects.item1.desc">SaaS multi-tenant PDF + chatbot (AWS)</span>
+                </div>
+                <div class="project-meta">
+                    <span class="tags">[AWS] [Terraform] [Lambda] [S3]</span>
+                </div>
+            </div>
 
-        <h3 data-i18n="projects.serverlessTitle">
-            Serverless deployment automation
-        </h3>
-        <p data-i18n="projects.serverlessBody">
-            Implementation of pipelines for AWS Lambda functions with automated tests and
-            branch-based deployments, reducing lead time and manual errors in releases.
-        </p>
+            <div class="project-row">
+                <div class="project-main">
+                    <span class="project-name" data-i18n="projects.item2.name">biocloud-ai/</span>
+                    <span class="project-desc" data-i18n="projects.item2.desc">experiments/LLM tooling</span>
+                </div>
+                <div class="project-meta">
+                    <span class="tags">[Python] [LLMs] [RAG] [OpenAI]</span>
+                </div>
+            </div>
+
+            <div class="project-row">
+                <div class="project-main">
+                    <span class="project-name" data-i18n="projects.item3.name">coni-app/</span>
+                    <span class="project-desc" data-i18n="projects.item3.desc">mobile ritual questions app</span>
+                </div>
+                <div class="project-meta">
+                    <span class="tags">[Mobile] [UX] [Firebase]</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- CI/CD DEMO -->
@@ -156,7 +188,7 @@
     <!-- CONTACT -->
     <section id="contact" class="section">
         <h2 data-i18n="contact.title">Contact</h2>
-        <ul class="contact-list">
+        <ul class="contact-list rows">
             <li data-i18n="contact.email">
                 📧 Email: your.professional.email@example.com
             </li>
@@ -187,8 +219,8 @@
 
   mermaid.initialize({
     startOnLoad: true,
-    theme: "dark",          /* puedes cambiar a 'default' si tu fondo es claro */
-    securityLevel: "loose"  /* permite usar estilos y saltos de línea */
+    theme: "dark",
+    securityLevel: "loose"
   });
 </script>
 
