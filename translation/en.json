@@ -7,7 +7,6 @@
     "projects": "Projects",
     "architecture": "Architecture",
     "lab": "Lab",
-    "cicd": "CI/CD Demo",
     "services": "Services",
     "contact": "Contact"
   },
@@ -69,12 +68,6 @@
     "toggleDiagram": "Show diagram"
   },
 
-  "cicd": {
-    "title": "CI/CD Demo (this site)",
-    "body1": "This portfolio is deployed as a static site in S3, fronted by CloudFront and a custom domain managed in Route 53.",
-    "body2": "A CodePipeline pipeline pulls changes from GitHub, runs a CodeBuild project, and syncs the site to the S3 bucket.",
-    "body3": "For demo purposes, I can use this pipeline to introduce small visual changes (for example, theme or layout tweaks) on each deployment and track them in Git."
-  },
 
   "services": {
     "title": "💼 Available for Consulting",

@@ -23,6 +23,14 @@
     <meta name="twitter:title" content="Julio Reyes - DevOps Engineer | AWS • Terraform • CI/CD">
     <meta name="twitter:description" content="DevOps engineer specializing in AWS infrastructure, Terraform, CI/CD pipelines. Available for consulting in Chile &amp; remote USA/LATAM.">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- OG image (generate og-image.png from generate-og-image.html and place in root) -->
+    <meta property="og:image" content="https://julayo-dev.com/og-image.png">
+    <meta name="twitter:image" content="https://julayo-dev.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -49,7 +57,6 @@
     <a href="#skills" data-i18n="nav.skills">Skills</a>
     <a href="#projects" data-i18n="nav.projects">Projects</a>
     <a href="#lab" data-i18n="nav.lab">Lab</a>
-    <a href="#cicd" data-i18n="nav.cicd">CI/CD Demo</a>
     <a href="#services" data-i18n="nav.services">Services</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
 </nav>
@@ -199,23 +206,6 @@
 
         <p class="lab-approach" data-i18n="lab.approach">
             <strong>Approach:</strong> Build fast MVPs (2–4 weeks) → validate → iterate or pivot
-        </p>
-    </section>
-
-    <!-- CI/CD DEMO -->
-    <section id="cicd" class="section">
-        <h2 data-i18n="cicd.title">CI/CD Demo (this site)</h2>
-        <p data-i18n="cicd.body1">
-            This portfolio is deployed as a static site in S3, fronted by CloudFront and a custom
-            domain managed in Route&nbsp;53.
-        </p>
-        <p data-i18n="cicd.body2">
-            A CodePipeline pipeline pulls changes from GitHub, runs a CodeBuild project, and
-            syncs the site to the S3 bucket.
-        </p>
-        <p data-i18n="cicd.body3">
-            For demo purposes, I can use this pipeline to introduce small visual changes
-            (for example, theme or layout tweaks) on each deployment and track them in Git.
         </p>
     </section>
 

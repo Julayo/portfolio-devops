@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>404 — julayo-dev.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+    :root {
+      --bg: #0b120e;
+      --text: #cfe7d6;
+      --muted: #86a391;
+      --accent: #7CFF9A;
+      --line: rgba(124,255,154,.18);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      font-family: var(--mono);
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      padding: 2rem 1.5rem;
+      border: 1px solid var(--line);
+      background: rgba(15, 26, 19, 0.6);
+      max-width: 480px;
+      width: 90%;
+    }
+    .prompt { color: var(--accent); font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .error  { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .code   { color: var(--muted); font-size: 0.85rem; margin-bottom: 1.5rem; }
+    .code span { color: #ff7c7c; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p class="prompt">julayo@dev:~$ cat [this-page]</p>
+    <p class="error">cat: [this-page]: No such file or directory</p>
+    <p class="code">exit code: <span>404</span></p>
+    <a href="/">→ cd ~/&nbsp;&nbsp;(back to home)</a>
+  </div>
+</body>
+</html>
