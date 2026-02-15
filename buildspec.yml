@@ -16,3 +16,11 @@ phases:
         --exclude 'generate-og-image.html'
         --exclude 'resume.html'
         --exclude 'infra/*'
+
+  post_build:
+    commands:
+      - "echo == CloudFront invalidation =="
+      - >
+        aws cloudfront create-invalidation
+        --distribution-id ${CLOUDFRONT_DIST_ID}
+        --paths "/*"
