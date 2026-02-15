@@ -6,7 +6,10 @@
     "about": "About me",
     "skills": "Skills",
     "projects": "Projects",
+    "architecture": "Architecture",
+    "lab": "Lab",
     "cicd": "CI/CD Demo",
+    "services": "Services",
     "contact": "Contact"
   },
 
@@ -21,7 +24,7 @@
 
   "about": {
     "title": "About me",
-    "body": "I'm a DevOps engineer in Chile with experience working for U.S. banking and enterprise clients. I focus on CI/CD, automation with Python, and cloud environments (mainly AWS)."
+    "body": "<p>By day, I keep pipelines running and infrastructure stable for a U.S. banking client — the kind of environment where deploys need to be boring and failures are expensive.</p><p>Nights and weekends, I co-build side projects at <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a> with a partner. The idea: ship fast MVPs, see what solves real problems, iterate or cut.</p><p>I'm also a dad — which means I've gotten good at ruthless prioritization. No ceremony, no complexity that doesn't earn its place. It makes me a better engineer.</p><p>I got into DevOps because I hate doing the same thing twice. If a process is tedious and repetitive, it should be automated. Based in Santiago, Chile 🇨🇱 — open to remote work with teams in LATAM or the USA.</p>"
   },
 
   "skills": {
@@ -54,6 +57,25 @@
     "serverlessTitle": "Serverless deployment automation",
     "serverlessBody": "Implementation of pipelines for AWS Lambda functions with automated tests and branch-based deployments, reducing lead time and manual errors in releases."
   },
+  "lab": {
+    "title": "🧪 Side Projects Lab",
+    "intro": "Beyond client work, I experiment with ideas at <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a>",
+    "currentTitle": "Current experiments:",
+    "item1": {
+      "name": "UF Tracker Chile 🇨🇱",
+      "desc": "Mobile app for Chilean financial indicators (UF, UTM, USD)",
+      "tech": "[React Native] [AWS Lambda] [DynamoDB]",
+      "status": "📱 In Development"
+    },
+    "item2": {
+      "name": "Price Comparison Engine",
+      "desc": "Ethical web scraper for Chilean e-commerce",
+      "tech": "[Python] [Scrapy] [EventBridge]",
+      "status": "💡 Planned"
+    },
+    "approach": "<strong>Approach:</strong> Build fast MVPs (2–4 weeks) → validate → iterate or pivot"
+  },
+
   "architecture": {
     "title": "Architecture",
     "subtitle": "This portfolio is deployed using AWS serverless and CI/CD. Below you can see how the pieces fit together.",
@@ -68,12 +90,26 @@
     "body3": "For demo purposes, I can use this pipeline to introduce small visual changes (for example, theme or layout tweaks) on each deployment and track them in Git."
   },
 
+  "services": {
+    "title": "💼 Available for Consulting",
+    "subtitle": "I help startups and SMBs with:",
+    "item1": "AWS infrastructure setup &amp; migration",
+    "item2": "CI/CD pipeline implementation",
+    "item3": "Docker &amp; Kubernetes deployments",
+    "item4": "DevOps process optimization",
+    "item5": "Terraform / IaC best practices",
+    "rates": "<strong>Rates:</strong> $50–100/hour or project-based",
+    "contact": "<strong>Contact:</strong> <a href=\"mailto:julayo@delete-from.com\">julayo@delete-from.com</a>"
+  },
+
   "contact": {
     "title": "Contact",
-    "email": "📧 Email: julioreyesrepiso@gmail.com",
-    "linkedin": "🔗 LinkedIn: https://www.linkedin.com/in/julio-reyes-repiso-78a87454/",
-    "location": "📍 Location: Santiago, Chile (open to remote roles for USA / LatAm)",
-    "footer": "Static portfolio built to showcase DevOps / CI-CD skills on AWS."
+    "email": "📧 Email: <a href=\"mailto:julioreyesrepiso@gmail.com\">julioreyesrepiso@gmail.com</a>",
+    "linkedin": "🔗 LinkedIn: <a href=\"https://www.linkedin.com/in/julio-reyes-repiso-78a87454/\" target=\"_blank\" rel=\"noopener\">linkedin.com/in/julioreyes-devops</a>",
+    "github": "🐙 GitHub: <a href=\"https://github.com/Julayo\" target=\"_blank\" rel=\"noopener\">github.com/julioreyes</a>",
+    "website": "🌐 Website: <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a>",
+    "location": "📍 Location: Santiago, Chile 🇨🇱 (Remote-friendly for USA / LATAM)",
+    "consulting": "💼 Available for consulting: AWS infrastructure, CI/CD pipelines, DevOps automation."
   },
 
   "footer": {

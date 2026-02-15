@@ -6,7 +6,10 @@
     "about": "Sobre mí",
     "skills": "Skills",
     "projects": "Proyectos",
+    "architecture": "Arquitectura",
+    "lab": "Lab",
     "cicd": "Demo CI/CD",
+    "services": "Servicios",
     "contact": "Contacto"
   },
 
@@ -21,7 +24,7 @@
 
   "about": {
     "title": "Sobre mí",
-    "body": "Soy ingeniero DevOps en Chile, con experiencia trabajando para clientes bancarios y empresas de Estados Unidos. Me especializo en CI/CD, automatización con Python y entornos en la nube (principalmente AWS)."
+    "body": "<p>De día, mantengo pipelines y estabilidad de infraestructura para un cliente bancario en EE.UU. — un entorno donde los deploys deben ser aburridos y los fallos tienen costo real.</p><p>Las noches y fines de semana, construyo side projects en <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a> junto a un socio. La idea: MVPs rápidos, validar si resuelven algo real, iterar o cortar.</p><p>También soy padre — lo que me ha obligado a priorizar sin piedad. Cero ceremonia, cero complejidad que no se gane su lugar. Eso me hace mejor ingeniero.</p><p>Llegué al DevOps porque odio hacer la misma cosa dos veces. Si un proceso es tedioso y repetitivo, debe automatizarse. Con base en Santiago, Chile 🇨🇱 — abierto a trabajo remoto con equipos en LATAM o EE.UU.</p>"
   },
 
   "skills": {
@@ -54,6 +57,25 @@
     "serverlessTitle": "Automatización de despliegues serverless",
     "serverlessBody": "Implementación de pipelines para funciones AWS Lambda con pruebas automatizadas y despliegues controlados por rama, reduciendo el tiempo de entrega y los errores manuales en los releases."
   },
+  "lab": {
+    "title": "🧪 Laboratorio de Side Projects",
+    "intro": "Fuera del trabajo con clientes, experimento con ideas en <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a>",
+    "currentTitle": "Experimentos actuales:",
+    "item1": {
+      "name": "UF Tracker Chile 🇨🇱",
+      "desc": "App móvil para indicadores financieros chilenos (UF, UTM, USD)",
+      "tech": "[React Native] [AWS Lambda] [DynamoDB]",
+      "status": "📱 En Desarrollo"
+    },
+    "item2": {
+      "name": "Motor de Comparación de Precios",
+      "desc": "Web scraper ético para e-commerce chileno",
+      "tech": "[Python] [Scrapy] [EventBridge]",
+      "status": "💡 Planificado"
+    },
+    "approach": "<strong>Enfoque:</strong> MVPs rápidos (2–4 semanas) → validar → iterar o pivotar"
+  },
+
   "architecture": {
     "title": "Arquitectura",
     "subtitle": "Este portafolio se despliega usando AWS serverless y CI/CD. Abajo puedes ver como encajan las piezas.",
@@ -68,12 +90,26 @@
     "body3": "Para fines de demo, puedo usar este pipeline para introducir pequeños cambios visuales (por ejemplo, tema o ajustes de layout) en cada despliegue y rastrearlos en Git."
   },
 
+  "services": {
+    "title": "💼 Disponible para Consultoría",
+    "subtitle": "Ayudo a startups y PYMEs con:",
+    "item1": "Configuración y migración de infraestructura AWS",
+    "item2": "Implementación de pipelines CI/CD",
+    "item3": "Despliegues con Docker y Kubernetes",
+    "item4": "Optimización de procesos DevOps",
+    "item5": "Buenas prácticas con Terraform / IaC",
+    "rates": "<strong>Tarifas:</strong> $50–100/hora o precio por proyecto",
+    "contact": "<strong>Contacto:</strong> <a href=\"mailto:julayo@delete-from.com\">julayo@delete-from.com</a>"
+  },
+
   "contact": {
     "title": "Contacto",
-    "email": "📧 Email: julioreyesrepiso@gmail.com",
-    "linkedin": "🔗 LinkedIn: https://www.linkedin.com/in/julio-reyes-repiso-78a87454/",
-    "location": "📍 Ubicación: Santiago, Chile (disponible remoto para USA / Latam)",
-    "footer": "Portafolio estático construido para demostrar skills de DevOps / CI-CD en AWS."
+    "email": "📧 Email: <a href=\"mailto:julioreyesrepiso@gmail.com\">julioreyesrepiso@gmail.com</a>",
+    "linkedin": "🔗 LinkedIn: <a href=\"https://www.linkedin.com/in/julio-reyes-repiso-78a87454/\" target=\"_blank\" rel=\"noopener\">linkedin.com/in/julioreyes-devops</a>",
+    "github": "🐙 GitHub: <a href=\"https://github.com/Julayo\" target=\"_blank\" rel=\"noopener\">github.com/julioreyes</a>",
+    "website": "🌐 Sitio web: <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a>",
+    "location": "📍 Ubicación: Santiago, Chile 🇨🇱 (disponible remoto para USA / LATAM)",
+    "consulting": "💼 Disponible para consultoría: infraestructura AWS, pipelines CI/CD, automatización DevOps."
   },
 
   "footer": {

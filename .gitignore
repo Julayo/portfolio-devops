@@ -15,5 +15,9 @@ Thumbs.db
 node_modules/
 dist/
 
+# Dev tools (not for deployment)
+generate-og-image.html
+resume.html
+
 # Logs
 *.log

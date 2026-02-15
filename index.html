@@ -2,8 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DevOps CI/CD Portfolio - Julio Reyes</title>
+    <title>Julio Reyes - DevOps Engineer | AWS • Terraform • CI/CD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <meta name="description" content="DevOps engineer specializing in AWS infrastructure, Terraform, CI/CD pipelines. Available for consulting in Chile &amp; remote USA/LATAM.">
+    <meta name="keywords" content="DevOps, AWS, Terraform, CI/CD, Chile, Santiago, Remote, Platform Engineer, CodePipeline, Kubernetes">
+    <meta name="author" content="Julio Reyes">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://delete-from.com">
+    <meta property="og:title" content="Julio Reyes - DevOps Engineer | AWS • Terraform • CI/CD">
+    <meta property="og:description" content="DevOps engineer specializing in AWS infrastructure, Terraform, CI/CD pipelines. Available for consulting in Chile &amp; remote USA/LATAM.">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Julio Reyes - DevOps Engineer | AWS • Terraform • CI/CD">
+    <meta name="twitter:description" content="DevOps engineer specializing in AWS infrastructure, Terraform, CI/CD pipelines. Available for consulting in Chile &amp; remote USA/LATAM.">
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
@@ -28,9 +46,12 @@
 <nav class="main-nav" aria-label="Primary">
     <a href="#home" data-i18n="nav.home">Home</a>
     <a href="#about" data-i18n="nav.about">About me</a>
+    <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
     <a href="#skills" data-i18n="nav.skills">Skills</a>
     <a href="#projects" data-i18n="nav.projects">Projects</a>
+    <a href="#lab" data-i18n="nav.lab">Lab</a>
     <a href="#cicd" data-i18n="nav.cicd">CI/CD Demo</a>
+    <a href="#services" data-i18n="nav.services">Services</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
 </nav>
 
@@ -50,7 +71,7 @@
             <div class="hero-commands" aria-label="Quick commands">
                 <a href="#projects" data-i18n="home.cmdProjects">&gt; ls projects/</a>
                 <a href="#about" data-i18n="home.cmdAbout">&gt; cat about.txt</a>
-                <a href="#contact" data-i18n="home.cmdResume">&gt; open resume.pdf</a>
+                <a href="resume.pdf" target="_blank" data-i18n="home.cmdResume">&gt; open resume.pdf</a>
             </div>
         </div>
     </section>
@@ -58,11 +79,12 @@
     <!-- ABOUT -->
     <section id="about" class="section">
         <h2 data-i18n="about.title">About me</h2>
-        <p data-i18n="about.body">
-            I'm a DevOps engineer in Chile with experience working for U.S. banking and enterprise
-            clients. I focus on CI/CD, automation with Python, and cloud environments
-            (mainly AWS).
-        </p>
+        <div class="about-body" data-i18n="about.body">
+            <p>By day, I keep pipelines running and infrastructure stable for a U.S. banking client — the kind of environment where deploys need to be boring and failures are expensive.</p>
+            <p>Nights and weekends, I co-build side projects at <a href="https://delete-from.com" target="_blank" rel="noopener">delete-from.com</a> with a partner. The idea: ship fast MVPs, see what solves real problems, iterate or cut.</p>
+            <p>I'm also a dad — which means I've gotten good at ruthless prioritization. No ceremony, no complexity that doesn't earn its place. It makes me a better engineer.</p>
+            <p>I got into DevOps because I hate doing the same thing twice. If a process is tedious and repetitive, it should be automated. Based in Santiago, Chile 🇨🇱 — open to remote work with teams in LATAM or the USA.</p>
+        </div>
     </section>
 
     <section id="architecture" class="section">
@@ -168,6 +190,45 @@
         </div>
     </section>
 
+    <!-- SIDE PROJECTS LAB -->
+    <section id="lab" class="section">
+        <div class="section-title-row">
+            <h2 data-i18n="lab.title">🧪 Side Projects Lab</h2>
+            <span class="dir-label">lab/</span>
+        </div>
+        <p class="lab-intro" data-i18n="lab.intro">
+            Beyond client work, I experiment with ideas at <a href="https://delete-from.com" target="_blank" rel="noopener">delete-from.com</a>
+        </p>
+
+        <h3 data-i18n="lab.currentTitle">Current experiments:</h3>
+
+        <div class="lab-list">
+            <div class="lab-item">
+                <div class="lab-item-header">
+                    <span class="lab-num">01.</span>
+                    <span class="lab-name" data-i18n="lab.item1.name">UF Tracker Chile 🇨🇱</span>
+                    <span class="lab-status status-dev" data-i18n="lab.item1.status">📱 In Development</span>
+                </div>
+                <p class="lab-desc" data-i18n="lab.item1.desc">Mobile app for Chilean financial indicators (UF, UTM, USD)</p>
+                <span class="tags" data-i18n="lab.item1.tech">[React Native] [AWS Lambda] [DynamoDB]</span>
+            </div>
+
+            <div class="lab-item">
+                <div class="lab-item-header">
+                    <span class="lab-num">02.</span>
+                    <span class="lab-name" data-i18n="lab.item2.name">Price Comparison Engine</span>
+                    <span class="lab-status status-planned" data-i18n="lab.item2.status">💡 Planned</span>
+                </div>
+                <p class="lab-desc" data-i18n="lab.item2.desc">Ethical web scraper for Chilean e-commerce</p>
+                <span class="tags" data-i18n="lab.item2.tech">[Python] [Scrapy] [EventBridge]</span>
+            </div>
+        </div>
+
+        <p class="lab-approach" data-i18n="lab.approach">
+            <strong>Approach:</strong> Build fast MVPs (2–4 weeks) → validate → iterate or pivot
+        </p>
+    </section>
+
     <!-- CI/CD DEMO -->
     <section id="cicd" class="section">
         <h2 data-i18n="cicd.title">CI/CD Demo (this site)</h2>
@@ -185,21 +246,46 @@
         </p>
     </section>
 
+    <!-- SERVICES -->
+    <section id="services" class="section">
+        <div class="section-title-row">
+            <h2 data-i18n="services.title">💼 Available for Consulting</h2>
+        </div>
+        <p class="services-subtitle" data-i18n="services.subtitle">I help startups and SMBs with:</p>
+        <ul class="list rows services-list">
+            <li data-i18n="services.item1">AWS infrastructure setup &amp; migration</li>
+            <li data-i18n="services.item2">CI/CD pipeline implementation</li>
+            <li data-i18n="services.item3">Docker &amp; Kubernetes deployments</li>
+            <li data-i18n="services.item4">DevOps process optimization</li>
+            <li data-i18n="services.item5">Terraform / IaC best practices</li>
+        </ul>
+        <div class="services-footer">
+            <p data-i18n="services.rates"><strong>Rates:</strong> $50–100/hour or project-based</p>
+            <p data-i18n="services.contact"><strong>Contact:</strong> <a href="mailto:julayo@delete-from.com">julayo@delete-from.com</a></p>
+        </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="section">
         <h2 data-i18n="contact.title">Contact</h2>
         <ul class="contact-list rows">
             <li data-i18n="contact.email">
-                📧 Email: your.professional.email@example.com
+                📧 Email: <a href="mailto:julioreyesrepiso@gmail.com">julioreyesrepiso@gmail.com</a>
             </li>
             <li data-i18n="contact.linkedin">
-                🔗 LinkedIn: linkedin.com/in/your-profile
+                🔗 LinkedIn: <a href="https://www.linkedin.com/in/julio-reyes-repiso-78a87454/" target="_blank" rel="noopener">linkedin.com/in/julioreyes-devops</a>
+            </li>
+            <li data-i18n="contact.github">
+                🐙 GitHub: <a href="https://github.com/Julayo" target="_blank" rel="noopener">github.com/julioreyes</a>
+            </li>
+            <li data-i18n="contact.website">
+                🌐 Website: <a href="https://delete-from.com" target="_blank" rel="noopener">delete-from.com</a>
             </li>
             <li data-i18n="contact.location">
-                📍 Location: Santiago, Chile (open to remote roles for USA / LatAm)
+                📍 Location: Santiago, Chile 🇨🇱 (Remote-friendly for USA / LATAM)
             </li>
-            <li data-i18n="contact.footer">
-                Static portfolio built to showcase DevOps / CI-CD skills on AWS.
+            <li data-i18n="contact.consulting">
+                💼 Available for consulting: AWS infrastructure, CI/CD pipelines, DevOps automation.
             </li>
         </ul>
     </section>

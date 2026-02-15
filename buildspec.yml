@@ -7,4 +7,12 @@ phases:
       - "echo Bucket: ${TARGET_BUCKET}"
       - "pwd"
       - "ls -la"
-      - "aws s3 sync . s3://${TARGET_BUCKET} --delete"
+      - >
+        aws s3 sync . s3://${TARGET_BUCKET} --delete
+        --exclude '.git/*'
+        --exclude '.gitignore'
+        --exclude 'buildspec.yml'
+        --exclude 'README.md'
+        --exclude 'generate-og-image.html'
+        --exclude 'resume.html'
+        --exclude 'infra/*'
