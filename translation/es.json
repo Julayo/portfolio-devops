@@ -3,7 +3,6 @@
 
   "nav": {
     "home": "Inicio",
-    "about": "Sobre mí",
     "skills": "Skills",
     "projects": "Proyectos",
     "architecture": "Arquitectura",
@@ -18,12 +17,11 @@
     "subtitle": "Ingeniero DevOps / Platform (AWS • Terraform • CI/CD • Kubernetes)",
     "line3": "Construyo sistemas calmados y observables donde los despliegues no se sienten como una apuesta.",
     "cmdProjects": "> ls projects/",
-    "cmdAbout": "> cat about.txt",
+    "cmdAbout": "julayo@dev:~$ cat about.txt",
     "cmdResume": "> open resume.pdf"
   },
 
   "about": {
-    "title": "Sobre mí",
     "body": "<p>De día, mantengo pipelines y estabilidad de infraestructura para un cliente bancario en EE.UU. — un entorno donde los deploys deben ser aburridos y los fallos tienen costo real.</p><p>Las noches y fines de semana, construyo side projects en <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a> junto a un socio. La idea: MVPs rápidos, validar si resuelven algo real, iterar o cortar.</p><p>También soy padre — lo que me ha obligado a priorizar sin piedad. Cero ceremonia, cero complejidad que no se gane su lugar. Eso me hace mejor ingeniero.</p><p>Llegué al DevOps porque odio hacer la misma cosa dos veces. Si un proceso es tedioso y repetitivo, debe automatizarse. Con base en Santiago, Chile 🇨🇱 — abierto a trabajo remoto con equipos en LATAM o EE.UU.</p>"
   },
 
@@ -38,24 +36,11 @@
   "projects": {
     "title": "Proyectos",
     "directoryTitle": "proyectos/",
-    "linkGithub": "GitHub",
     "linkDemo": "Demo",
     "item1": {
-      "name": "deletefrom-assistant/",
-      "desc": "SaaS multi-tenant de PDF + chatbot (AWS)"
-    },
-    "item2": {
-      "name": "biocloud-ai/",
-      "desc": "experimentos/herramientas LLM"
-    },
-    "item3": {
-      "name": "coni-app/",
-      "desc": "app móvil de preguntas rituales"
-    },
-    "platformTitle": "Plataforma CI/CD multi-entorno",
-    "platformBody": "Diseño y automatización de pipelines desde desarrollo hasta producción, incluyendo análisis estático de código, construcción de imágenes Docker y despliegues automatizados en Kubernetes/OpenShift.",
-    "serverlessTitle": "Automatización de despliegues serverless",
-    "serverlessBody": "Implementación de pipelines para funciones AWS Lambda con pruebas automatizadas y despliegues controlados por rama, reduciendo el tiempo de entrega y los errores manuales en los releases."
+      "name": "delete-from.com/",
+      "desc": "Plataforma SaaS — herramientas PDF, chatbot IA, multi-tenant (construida desde cero)"
+    }
   },
   "lab": {
     "title": "🧪 Laboratorio de Side Projects",
@@ -99,7 +84,7 @@
     "item4": "Optimización de procesos DevOps",
     "item5": "Buenas prácticas con Terraform / IaC",
     "rates": "<strong>Tarifas:</strong> $50–100/hora o precio por proyecto",
-    "contact": "<strong>Contacto:</strong> <a href=\"mailto:julayo@delete-from.com\">julayo@delete-from.com</a>"
+    "contact": "<strong>Contacto:</strong> <a href=\"mailto:julioreyesrepiso@gmail.com\">julioreyesrepiso@gmail.com</a>"
   },
 
   "contact": {

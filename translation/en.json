@@ -3,7 +3,6 @@
 
   "nav": {
     "home": "Home",
-    "about": "About me",
     "skills": "Skills",
     "projects": "Projects",
     "architecture": "Architecture",
@@ -18,12 +17,11 @@
     "subtitle": "DevOps / Platform Engineer (AWS • Terraform • CI/CD • Kubernetes)",
     "line3": "I build calm, observable systems where deploys don’t feel like gambling.",
     "cmdProjects": "> ls projects/",
-    "cmdAbout": "> cat about.txt",
+    "cmdAbout": "julayo@dev:~$ cat about.txt",
     "cmdResume": "> open resume.pdf"
   },
 
   "about": {
-    "title": "About me",
     "body": "<p>By day, I keep pipelines running and infrastructure stable for a U.S. banking client — the kind of environment where deploys need to be boring and failures are expensive.</p><p>Nights and weekends, I co-build side projects at <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a> with a partner. The idea: ship fast MVPs, see what solves real problems, iterate or cut.</p><p>I'm also a dad — which means I've gotten good at ruthless prioritization. No ceremony, no complexity that doesn't earn its place. It makes me a better engineer.</p><p>I got into DevOps because I hate doing the same thing twice. If a process is tedious and repetitive, it should be automated. Based in Santiago, Chile 🇨🇱 — open to remote work with teams in LATAM or the USA.</p>"
   },
 
@@ -38,24 +36,11 @@
   "projects": {
     "title": "Projects",
     "directoryTitle": "projects/",
-    "linkGithub": "GitHub",
     "linkDemo": "Demo",
     "item1": {
-      "name": "deletefrom-assistant/",
-      "desc": "SaaS multi-tenant PDF + chatbot (AWS)"
-    },
-    "item2": {
-      "name": "biocloud-ai/",
-      "desc": "experiments/LLM tooling"
-    },
-    "item3": {
-      "name": "coni-app/",
-      "desc": "mobile ritual questions app"
-    },
-    "platformTitle": "Multi-environment CI/CD platform",
-    "platformBody": "Design and automation of pipelines from development to production, including static code analysis, Docker image build, and automated deployments to Kubernetes/OpenShift.",
-    "serverlessTitle": "Serverless deployment automation",
-    "serverlessBody": "Implementation of pipelines for AWS Lambda functions with automated tests and branch-based deployments, reducing lead time and manual errors in releases."
+      "name": "delete-from.com/",
+      "desc": "SaaS platform — PDF tools, AI chatbot, multi-tenant (built from scratch)"
+    }
   },
   "lab": {
     "title": "🧪 Side Projects Lab",
@@ -99,7 +84,7 @@
     "item4": "DevOps process optimization",
     "item5": "Terraform / IaC best practices",
     "rates": "<strong>Rates:</strong> $50–100/hour or project-based",
-    "contact": "<strong>Contact:</strong> <a href=\"mailto:julayo@delete-from.com\">julayo@delete-from.com</a>"
+    "contact": "<strong>Contact:</strong> <a href=\"mailto:julioreyesrepiso@gmail.com\">julioreyesrepiso@gmail.com</a>"
   },
 
   "contact": {
