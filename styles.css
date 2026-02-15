@@ -476,8 +476,45 @@ a:focus-visible, button:focus-visible {
   background: rgba(11, 18, 14, 0.9);
 }
 
+.diagram-toggle {
+  margin: 0.6rem 0 1.8rem;
+}
+
+.diagram-toggle > summary {
+  cursor: pointer;
+  color: var(--accent2);
+  font-size: 0.85rem;
+  padding: 0.35rem 0;
+  user-select: none;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.diagram-toggle > summary::marker,
+.diagram-toggle > summary::-webkit-details-marker {
+  display: none;
+}
+
+.diagram-toggle > summary::before {
+  content: "▶";
+  font-size: 0.65rem;
+  color: var(--muted);
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.diagram-toggle[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.diagram-toggle > summary:hover {
+  color: var(--accent);
+}
+
 .diagram-container {
-  margin: 1.2rem 0 2.5rem 0;
+  margin: 0.8rem 0 0;
   padding: 1rem;
   border: 1px solid var(--line);
   background: rgba(15, 26, 19, 0.5);

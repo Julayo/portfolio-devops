@@ -61,13 +61,6 @@
             <h1 class="prompt-line">
                 <span data-i18n="home.title">julayo@dev:~$ whoami</span><span class="cursor" aria-hidden="true">█</span>
             </h1>
-            <p class="hero-line" data-i18n="home.subtitle">
-                DevOps / Platform Engineer (AWS • Terraform • CI/CD • Kubernetes)
-            </p>
-            <p class="hero-line muted" data-i18n="home.line3">
-                I build calm, observable systems where deploys don't feel like gambling.
-            </p>
-            <p class="terminal-cmd" data-i18n="home.cmdAbout">julayo@dev:~$ cat about.txt</p>
             <div class="terminal-about about-body" data-i18n="about.body">
                 <p>By day, I keep pipelines running and infrastructure stable for a U.S. banking client — the kind of environment where deploys need to be boring and failures are expensive.</p>
                 <p>Nights and weekends, I co-build side projects at <a href="https://delete-from.com" target="_blank" rel="noopener">delete-from.com</a> with a partner. The idea: ship fast MVPs, see what solves real problems, iterate or cut.</p>
@@ -88,38 +81,44 @@
         </p>
 
         <h3 data-i18n="architecture.awsTitle">AWS Portfolio Architecture</h3>
-        <div class="diagram-container">
-            <div class="mermaid">
-              graph TD
-                U[Visitor<br/>Browser] -->|HTTPS| R53[Route 53<br/>julayo-dev.com]
-                R53 --> CF[CloudFront<br/>CDN + HTTPS]
-                CF -->|Static files| S3[(S3 Bucket<br/>Static Site)]
+        <details class="diagram-toggle">
+            <summary data-i18n="architecture.toggleDiagram">Show diagram</summary>
+            <div class="diagram-container">
+                <div class="mermaid">
+                  graph TD
+                    U[Visitor<br/>Browser] -->|HTTPS| R53[Route 53<br/>julayo-dev.com]
+                    R53 --> CF[CloudFront<br/>CDN + HTTPS]
+                    CF -->|Static files| S3[(S3 Bucket<br/>Static Site)]
 
-                subgraph AWS["AWS Account"]
-                  R53
-                  CF
-                  S3
-                end
+                    subgraph AWS["AWS Account"]
+                      R53
+                      CF
+                      S3
+                    end
+                </div>
             </div>
-        </div>
+        </details>
 
         <h3 data-i18n="architecture.pipelineTitle">CI/CD Pipeline</h3>
-        <div class="diagram-container">
-            <div class="mermaid">
-              graph LR
-                Dev[git push] --> GH[GitHub<br/>main branch]
-                GH -->|webhook| CP[CodePipeline]
+        <details class="diagram-toggle">
+            <summary data-i18n="architecture.toggleDiagram">Show diagram</summary>
+            <div class="diagram-container">
+                <div class="mermaid">
+                  graph LR
+                    Dev[git push] --> GH[GitHub<br/>main branch]
+                    GH -->|webhook| CP[CodePipeline]
 
-                subgraph PIPELINE["AWS CI/CD"]
-                  CP --> CB[CodeBuild<br/>buildspec.yml]
-                  CB -->|aws s3 sync| S3[(S3 Bucket)]
-                  CB -->|create-invalidation| CF[CloudFront]
-                end
+                    subgraph PIPELINE["AWS CI/CD"]
+                      CP --> CB[CodeBuild<br/>buildspec.yml]
+                      CB -->|aws s3 sync| S3[(S3 Bucket)]
+                      CB -->|create-invalidation| CF[CloudFront]
+                    end
 
-                S3 --- CF
-                CF --> U[Visitors]
+                    S3 --- CF
+                    CF --> U[Visitors]
+                </div>
             </div>
-        </div>
+        </details>
     </section>
 
     <!-- SKILLS -->
@@ -152,7 +151,7 @@
             <div class="project-row">
                 <div class="project-main">
                     <span class="project-name" data-i18n="projects.item1.name">delete-from.com/</span>
-                    <span class="project-desc" data-i18n="projects.item1.desc">SaaS platform — PDF tools, AI chatbot, multi-tenant (built from scratch)</span>
+                    <span class="project-desc" data-i18n="projects.item1.desc">Lab and consulting venture — PDF tools, AI tools, web apps (built with a partner)</span>
                 </div>
                 <div class="project-meta">
                     <span class="tags">[AWS] [Terraform] [Lambda] [Python] [S3]</span>

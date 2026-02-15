@@ -22,13 +22,13 @@
   },
 
   "about": {
-    "body": "<p>De día, mantengo pipelines y estabilidad de infraestructura para un cliente bancario en EE.UU. — un entorno donde los deploys deben ser aburridos y los fallos tienen costo real.</p><p>Las noches y fines de semana, construyo side projects en <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a> junto a un socio. La idea: MVPs rápidos, validar si resuelven algo real, iterar o cortar.</p><p>También soy padre — lo que me ha obligado a priorizar sin piedad. Cero ceremonia, cero complejidad que no se gane su lugar. Eso me hace mejor ingeniero.</p><p>Llegué al DevOps porque odio hacer la misma cosa dos veces. Si un proceso es tedioso y repetitivo, debe automatizarse. Con base en Santiago, Chile 🇨🇱 — abierto a trabajo remoto con equipos en LATAM o EE.UU.</p>"
+    "body": "<p>De día, mantengo pipelines en producción e infraestructura estable para un cliente bancario en EE.UU. — un entorno donde los deploys tienen que ser aburridos y los errores tienen costo real.</p><p>Las noches y los fines de semana construyo proyectos en <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a> junto a un socio: lab de ideas, herramientas web y consultoría informática.</p><p>También soy padre — lo que me obligó a priorizar sin piedad. Sin ceremonia, sin complejidad que no se gane su lugar. Eso me hace mejor ingeniero.</p><p>Llegué al DevOps porque odio repetir las mismas tareas. Si un proceso es tedioso, debe automatizarse. Basado en Santiago, Chile 🇨🇱 — disponible para trabajo remoto con equipos en LATAM o EE.UU.</p>"
   },
 
   "skills": {
     "title": "Skills principales",
     "item1": "CI/CD con Jenkins, Tekton, GitHub Actions, AWS CodePipeline y CodeBuild.",
-    "item2": "Infraestructura en AWS (Lambda, S3, CloudFront, ECS/EKS, networking, IAM básico).",
+    "item2": "Infraestructura en AWS (Lambda, S3, CloudFront, ECS/EKS, networking, IAM).",
     "item3": "Automatización con Python y Bash para build, deploy y tareas de mantenimiento.",
     "item4": "Contenedores con Docker y despliegues en Kubernetes/OpenShift."
   },
@@ -39,7 +39,7 @@
     "linkDemo": "Demo",
     "item1": {
       "name": "delete-from.com/",
-      "desc": "Plataforma SaaS — herramientas PDF, chatbot IA, multi-tenant (construida desde cero)"
+      "desc": "Lab y consultoría con un socio — herramientas PDF, IA, apps web"
     }
   },
   "lab": {
@@ -65,7 +65,8 @@
     "title": "Arquitectura",
     "subtitle": "Este portafolio se despliega usando AWS serverless y CI/CD. Abajo puedes ver como encajan las piezas.",
     "awsTitle": "Arquitectura del portafolio en AWS",
-    "pipelineTitle": "Pipeline CI/CD"
+    "pipelineTitle": "Pipeline CI/CD",
+    "toggleDiagram": "Ver diagrama"
   },
 
   "cicd": {

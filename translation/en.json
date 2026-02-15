@@ -28,7 +28,7 @@
   "skills": {
     "title": "Key skills",
     "item1": "CI/CD with Jenkins, Tekton, GitHub Actions, AWS CodePipeline and CodeBuild.",
-    "item2": "AWS infrastructure (Lambda, S3, CloudFront, ECS/EKS, networking, IAM basics).",
+    "item2": "AWS infrastructure (Lambda, S3, CloudFront, ECS/EKS, networking, IAM).",
     "item3": "Automation with Python and Bash for build, deploy, and housekeeping tasks.",
     "item4": "Containers with Docker and deployments to Kubernetes/OpenShift."
   },
@@ -39,7 +39,7 @@
     "linkDemo": "Demo",
     "item1": {
       "name": "delete-from.com/",
-      "desc": "SaaS platform — PDF tools, AI chatbot, multi-tenant (built from scratch)"
+      "desc": "Lab and consulting venture — PDF tools, AI tools, web apps (built with a partner)"
     }
   },
   "lab": {
@@ -65,7 +65,8 @@
     "title": "Architecture",
     "subtitle": "This portfolio is deployed using AWS serverless and CI/CD. Below you can see how the pieces fit together.",
     "awsTitle": "AWS Portfolio Architecture",
-    "pipelineTitle": "CI/CD Pipeline"
+    "pipelineTitle": "CI/CD Pipeline",
+    "toggleDiagram": "Show diagram"
   },
 
   "cicd": {
