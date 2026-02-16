@@ -21,7 +21,7 @@
   },
 
   "about": {
-    "body": "<p>De día, mantengo pipelines en producción e infraestructura estable para un cliente bancario en EE.UU. — un entorno donde los deploys tienen que ser aburridos y los errores tienen costo real.</p><p>Las noches y los fines de semana construyo proyectos en <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a> junto a un socio: lab de ideas, herramientas web y consultoría informática.</p><p>También soy padre — lo que me obligó a priorizar sin piedad. Sin ceremonia, sin complejidad que no se gane su lugar. Eso me hace mejor ingeniero.</p><p>Llegué al DevOps porque odio repetir las mismas tareas. Si un proceso es tedioso, debe automatizarse. Basado en Santiago, Chile 🇨🇱 — disponible para trabajo remoto con equipos en LATAM o EE.UU.</p>"
+    "body": "<p>De día, mantengo pipelines en producción e infraestructura estable para un cliente bancario en EE.UU. — un entorno donde los deploys tienen que ser aburridos y los errores tienen costo real.</p><p>Durante las noches y fines de semana, construyo proyectos en <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a> : lab de ideas, herramientas web y consultoría informática.</p><p>También soy padre — lo que me obligó a priorizar sin piedad. Sin ceremonia, sin complejidad que no se gane su lugar. Eso me hace mejor ingeniero.</p><p>Llegué al DevOps porque odio repetir las mismas tareas. Si un proceso es tedioso, debe automatizarse. Vivo en Santiago, Chile 🇨🇱 — disponible para trabajo remoto con equipos en LATAM o EE.UU.</p>"
   },
 
   "skills": {
