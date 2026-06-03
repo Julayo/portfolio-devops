@@ -60,7 +60,6 @@
     <a href="#skills" data-i18n="nav.skills">Skills</a>
     <a href="#projects" data-i18n="nav.projects">Projects</a>
     <a href="#lab" data-i18n="nav.lab">Lab</a>
-    <a href="#services" data-i18n="nav.services">Services</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
 </nav>
 
@@ -73,7 +72,7 @@
             </h1>
             <div class="terminal-about about-body" data-i18n="about.body">
                 <p>By day, I keep pipelines running and infrastructure stable for a U.S. banking client — the kind of environment where deploys need to be boring and failures are expensive.</p>
-                <p>Nights and weekends, I co-build side projects at <a href="https://delete-from.com" target="_blank" rel="noopener">delete-from.com</a> with a partner. The idea: ship fast MVPs, see what solves real problems, iterate or cut.</p>
+                <p>Outside work, I build Terraform modules, experiment with cloud infrastructure patterns, and develop an indie game. Good engineering habits don't stop at the office door.</p>
                 <p>I'm also a dad — which means I've gotten good at ruthless prioritization. No ceremony, no complexity that doesn't earn its place. It makes me a better engineer.</p>
                 <p>I got into DevOps because I hate doing the same thing twice. If a process is tedious and repetitive, it should be automated. Based in Santiago, Chile 🇨🇱 — open to remote work with teams in LATAM or the USA.</p>
             </div>
@@ -160,13 +159,13 @@
         <div class="project-list">
             <div class="project-row">
                 <div class="project-main">
-                    <span class="project-name" data-i18n="projects.item1.name">delete-from.com/</span>
-                    <span class="project-desc" data-i18n="projects.item1.desc">Lab and consulting venture — PDF tools, AI tools, web apps (built with a partner)</span>
+                    <span class="project-name" data-i18n="projects.item1.name">portfolio-devops/</span>
+                    <span class="project-desc" data-i18n="projects.item1.desc">This site — static portfolio on AWS, automated via CodePipeline → S3 → CloudFront, IaC in Terraform</span>
                 </div>
                 <div class="project-meta">
-                    <span class="tags">[AWS] [Terraform] [Lambda] [Python] [S3]</span>
+                    <span class="tags">[AWS] [Terraform] [CodePipeline] [S3] [CloudFront]</span>
                     <span class="links">
-                        <a href="https://delete-from.com" target="_blank" rel="noopener" data-i18n="projects.linkDemo">Demo</a>
+                        <a href="https://github.com/Julayo/portfolio-devops" target="_blank" rel="noopener" data-i18n="projects.linkSource">Source</a>
                     </span>
                 </div>
             </div>
@@ -180,54 +179,31 @@
             <span class="dir-label">lab/</span>
         </div>
         <p class="lab-intro" data-i18n="lab.intro">
-            Beyond client work, I experiment with ideas at <a href="https://delete-from.com" target="_blank" rel="noopener">delete-from.com</a>
+            Outside client work, I keep building.
         </p>
 
-        <h3 data-i18n="lab.currentTitle">Current experiments:</h3>
+        <h3 data-i18n="lab.currentTitle">What I'm building:</h3>
 
         <div class="lab-list">
             <div class="lab-item">
                 <div class="lab-item-header">
                     <span class="lab-num">01.</span>
-                    <span class="lab-name" data-i18n="lab.item1.name">UF Tracker Chile 🇨🇱</span>
-                    <span class="lab-status status-dev" data-i18n="lab.item1.status">📱 In Development</span>
+                    <span class="lab-name" data-i18n="lab.item1.name">Terraform IaC modules</span>
+                    <span class="lab-status status-dev" data-i18n="lab.item1.status">🔧 WIP</span>
                 </div>
-                <p class="lab-desc" data-i18n="lab.item1.desc">Mobile app for Chilean financial indicators (UF, UTM, USD)</p>
-                <span class="tags" data-i18n="lab.item1.tech">[React Native] [AWS Lambda] [DynamoDB]</span>
+                <p class="lab-desc" data-i18n="lab.item1.desc">AWS infrastructure patterns and reusable modules — VPC, ECS, S3 pipelines. In progress on GitHub.</p>
+                <span class="tags" data-i18n="lab.item1.tech">[Terraform] [AWS] [HCL]</span>
             </div>
 
             <div class="lab-item">
                 <div class="lab-item-header">
                     <span class="lab-num">02.</span>
-                    <span class="lab-name" data-i18n="lab.item2.name">Price Comparison Engine</span>
-                    <span class="lab-status status-planned" data-i18n="lab.item2.status">💡 Planned</span>
+                    <span class="lab-name" data-i18n="lab.item2.name">Indie game dev</span>
+                    <span class="lab-status status-dev" data-i18n="lab.item2.status">🎮 Ongoing</span>
                 </div>
-                <p class="lab-desc" data-i18n="lab.item2.desc">Ethical web scraper for Chilean e-commerce</p>
-                <span class="tags" data-i18n="lab.item2.tech">[Python] [Scrapy] [EventBridge]</span>
+                <p class="lab-desc" data-i18n="lab.item2.desc">2D platformer built in Godot in my free time. Personal project, not a product.</p>
+                <span class="tags" data-i18n="lab.item2.tech">[Godot] [GDScript]</span>
             </div>
-        </div>
-
-        <p class="lab-approach" data-i18n="lab.approach">
-            <strong>Approach:</strong> Build fast MVPs (2–4 weeks) → validate → iterate or pivot
-        </p>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section">
-        <div class="section-title-row">
-            <h2 data-i18n="services.title">💼 Available for Consulting</h2>
-        </div>
-        <p class="services-subtitle" data-i18n="services.subtitle">I help startups and SMBs with:</p>
-        <ul class="list rows services-list">
-            <li data-i18n="services.item1">AWS infrastructure setup &amp; migration</li>
-            <li data-i18n="services.item2">CI/CD pipeline implementation</li>
-            <li data-i18n="services.item3">Docker &amp; Kubernetes deployments</li>
-            <li data-i18n="services.item4">DevOps process optimization</li>
-            <li data-i18n="services.item5">Terraform / IaC best practices</li>
-        </ul>
-        <div class="services-footer">
-            <p data-i18n="services.rates"><strong>Rates:</strong> $50–100/hour or project-based</p>
-            <p data-i18n="services.contact"><strong>Contact:</strong> <a href="mailto:julayo@delete-from.com">julayo@delete-from.com</a></p>
         </div>
     </section>
 
@@ -243,9 +219,6 @@
             </li>
             <li data-i18n="contact.github">
                 🐙 GitHub: <a href="https://github.com/Julayo" target="_blank" rel="noopener">github.com/julioreyes</a>
-            </li>
-            <li data-i18n="contact.website">
-                🌐 Website: <a href="https://delete-from.com" target="_blank" rel="noopener">delete-from.com</a>
             </li>
             <li data-i18n="contact.location">
                 📍 Location: Santiago, Chile 🇨🇱 (Remote-friendly for USA / LATAM)

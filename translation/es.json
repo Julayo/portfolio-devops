@@ -7,21 +7,18 @@
     "projects": "Proyectos",
     "architecture": "Arquitectura",
     "lab": "Lab",
-    "services": "Servicios",
     "contact": "Contacto"
   },
 
   "home": {
     "title": "julayo@dev:~$ whoami",
     "subtitle": "Ingeniero DevOps / Platform (AWS • Terraform • CI/CD • Kubernetes)",
-    "line3": "Construyo sistemas calmados y observables donde los despliegues no se sienten como una apuesta.",
     "cmdProjects": "> ls projects/",
-    "cmdAbout": "julayo@dev:~$ cat about.txt",
     "cmdResume": "> open resume.pdf"
   },
 
   "about": {
-    "body": "<p>De día, mantengo pipelines en producción e infraestructura estable para un cliente bancario en EE.UU. — un entorno donde los deploys tienen que ser aburridos y los errores tienen costo real.</p><p>Durante las noches y fines de semana, construyo proyectos en <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a> : lab de ideas, herramientas web y consultoría informática.</p><p>También soy padre — lo que me obligó a priorizar sin piedad. Sin ceremonia, sin complejidad que no se gane su lugar. Eso me hace mejor ingeniero.</p><p>Llegué al DevOps porque odio repetir las mismas tareas. Si un proceso es tedioso, debe automatizarse. Vivo en Santiago, Chile 🇨🇱 — disponible para trabajo remoto con equipos en LATAM o EE.UU.</p>"
+    "body": "<p>De día, mantengo pipelines en producción e infraestructura estable para un cliente bancario en EE.UU. — un entorno donde los deploys tienen que ser aburridos y los errores tienen costo real.</p><p>Fuera del trabajo, construyo módulos de Terraform, experimento con patrones de infraestructura en la nube y desarrollo un juego indie. Los buenos hábitos de ingeniería no terminan cuando cierra la oficina.</p><p>También soy padre — lo que me obligó a priorizar sin piedad. Sin ceremonia, sin complejidad que no se gane su lugar. Eso me hace mejor ingeniero.</p><p>Llegué al DevOps porque odio repetir las mismas tareas. Si un proceso es tedioso, debe automatizarse. Vivo en Santiago, Chile 🇨🇱 — disponible para trabajo remoto con equipos en LATAM o EE.UU.</p>"
   },
 
   "skills": {
@@ -35,58 +32,44 @@
   "projects": {
     "title": "Proyectos",
     "directoryTitle": "proyectos/",
-    "linkDemo": "Demo",
+    "linkSource": "Código",
     "item1": {
-      "name": "delete-from.com/",
-      "desc": "Lab y consultoría con un socio — herramientas PDF, IA, apps web"
+      "name": "portfolio-devops/",
+      "desc": "Este sitio — portafolio estático en AWS, automatizado vía CodePipeline → S3 → CloudFront, IaC en Terraform"
     }
   },
+
   "lab": {
     "title": "🧪 Laboratorio de Side Projects",
-    "intro": "Fuera del trabajo con clientes, experimento con ideas en <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a>",
-    "currentTitle": "Experimentos actuales:",
+    "intro": "Fuera del trabajo con clientes, sigo construyendo.",
+    "currentTitle": "Qué estoy construyendo:",
     "item1": {
-      "name": "UF Tracker Chile 🇨🇱",
-      "desc": "App móvil para indicadores financieros chilenos (UF, UTM, USD)",
-      "tech": "[React Native] [AWS Lambda] [DynamoDB]",
-      "status": "📱 En Desarrollo"
+      "name": "Módulos Terraform IaC",
+      "desc": "Patrones de infraestructura AWS y módulos reutilizables — VPC, ECS, pipelines S3. En construcción en GitHub.",
+      "tech": "[Terraform] [AWS] [HCL]",
+      "status": "🔧 En progreso"
     },
     "item2": {
-      "name": "Motor de Comparación de Precios",
-      "desc": "Web scraper ético para e-commerce chileno",
-      "tech": "[Python] [Scrapy] [EventBridge]",
-      "status": "💡 Planificado"
-    },
-    "approach": "<strong>Enfoque:</strong> MVPs rápidos (2–4 semanas) → validar → iterar o pivotar"
+      "name": "Desarrollo indie",
+      "desc": "Plataformero 2D hecho en Godot en mi tiempo libre. Proyecto personal, no un producto.",
+      "tech": "[Godot] [GDScript]",
+      "status": "🎮 Hobby"
+    }
   },
 
   "architecture": {
     "title": "Arquitectura",
-    "subtitle": "Este portafolio se despliega usando AWS serverless y CI/CD. Abajo puedes ver como encajan las piezas.",
+    "subtitle": "Este portafolio se despliega usando AWS serverless y CI/CD. Abajo puedes ver cómo encajan las piezas.",
     "awsTitle": "Arquitectura del portafolio en AWS",
     "pipelineTitle": "Pipeline CI/CD",
     "toggleDiagram": "Ver diagrama"
-  },
-
-
-  "services": {
-    "title": "💼 Disponible para Consultoría",
-    "subtitle": "Ayudo a startups y PYMEs con:",
-    "item1": "Configuración y migración de infraestructura AWS",
-    "item2": "Implementación de pipelines CI/CD",
-    "item3": "Despliegues con Docker y Kubernetes",
-    "item4": "Optimización de procesos DevOps",
-    "item5": "Buenas prácticas con Terraform / IaC",
-    "rates": "<strong>Tarifas:</strong> $50–100/hora o precio por proyecto",
-    "contact": "<strong>Contacto:</strong> <a href=\"mailto:julioreyesrepiso@gmail.com\">julioreyesrepiso@gmail.com</a>"
   },
 
   "contact": {
     "title": "Contacto",
     "email": "📧 Email: <a href=\"mailto:julioreyesrepiso@gmail.com\">julioreyesrepiso@gmail.com</a>",
     "linkedin": "🔗 LinkedIn: <a href=\"https://www.linkedin.com/in/julio-reyes-repiso-78a87454/\" target=\"_blank\" rel=\"noopener\">linkedin.com/in/julioreyes-devops</a>",
-    "github": "🐙 GitHub: <a href=\"https://github.com/Julayo\" target=\"_blank\" rel=\"noopener\">github.com/julioreyes</a>",
-    "website": "🌐 Sitio web: <a href=\"https://delete-from.com\" target=\"_blank\" rel=\"noopener\">delete-from.com</a>",
+    "github": "🐙 GitHub: <a href=\"https://github.com/Julayo\" target=\"_blank\" rel=\"noopener\">github.com/Julayo</a>",
     "location": "📍 Ubicación: Santiago, Chile 🇨🇱 (disponible remoto para USA / LATAM)",
     "consulting": "💼 Disponible para consultoría: infraestructura AWS, pipelines CI/CD, automatización DevOps."
   },

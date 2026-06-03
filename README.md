@@ -1,18 +1,18 @@
 # DevOps CI/CD Portfolio – Julio Reyes
 
-Static, bilingual (EN/ES) portfolio deployed to production at **[julayo-dev.com](https://julayo-dev.com)**.
+Static, bilingual (EN/ES) portfolio deployed to **[julayo-dev.com](https://julayo-dev.com)**.
 
-Built to showcase my experience as a **DevOps Engineer** (AWS · Terraform · CI/CD · Kubernetes) and to serve as a live example of a serverless static-site pipeline on AWS.
+Serves two purposes: showcase my experience as a **DevOps / Platform Engineer** (AWS · Terraform · CI/CD · Kubernetes), and demonstrate a live serverless static-site pipeline on AWS.
 
 ---
 
-## 🌐 Live Site
+## Live Site
 
 **[https://julayo-dev.com](https://julayo-dev.com)**
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 ```
 GitHub (main branch)
@@ -21,12 +21,14 @@ GitHub (main branch)
             │
             └─► AWS CodeBuild  (buildspec.yml)
                     │
-                    ├─► aws s3 sync → S3 (static hosting)
+                    ├─► aws s3 cp index.html      (Cache-Control: no-cache)
+                    ├─► aws s3 sync translation/  (Cache-Control: no-cache)
+                    ├─► aws s3 sync . --delete    (Cache-Control: max-age=86400)
                     │
-                    └─► aws cloudfront create-invalidation → CloudFront
-                                                                  │
-                                                                Route 53
-                                                           julayo-dev.com
+                    └─► CloudFront invalidation → /index.html /styles.css /js/* /translation/*
+                                                        │
+                                                    Route 53
+                                               julayo-dev.com
 ```
 
 | Layer | Service |
@@ -40,20 +42,16 @@ GitHub (main branch)
 
 ---
 
-## ⚙️ CodeBuild Environment Variables
-
-These must be configured in the CodeBuild project:
+## CodeBuild Environment Variables
 
 | Variable | Description |
 |---|---|
 | `TARGET_BUCKET` | S3 bucket name where the site is deployed |
 | `CLOUDFRONT_DIST_ID` | CloudFront distribution ID (for cache invalidation) |
 
-The `post_build` phase runs `aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DIST_ID} --paths "/*"` so changes are live immediately after every deploy.
-
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 portfolio-devops/
@@ -63,9 +61,7 @@ portfolio-devops/
 ├── resume.pdf              # Downloadable CV (served from S3)
 │
 ├── js/
-│   ├── lang.js             # Language switcher (loads JSON, sets innerHTML)
-│   ├── main.js             # Section interactions
-│   └── translation.js      # i18n init
+│   └── lang.js             # Language switcher — fetches JSON, sets innerHTML
 │
 ├── translation/
 │   ├── en.json             # English strings (supports inline HTML)
@@ -78,11 +74,11 @@ portfolio-devops/
     └── state-resources.tf
 ```
 
-> `infra/` is excluded from `aws s3 sync`. It is applied manually via `terraform apply`.
+> `infra/` is excluded from `aws s3 sync`. Applied manually via `terraform apply`.
 
 ---
 
-## 🌍 Bilingual UX (EN / ES)
+## Bilingual UX (EN / ES)
 
 Language switcher in the header. Strings live in `translation/en.json` and `translation/es.json`.
 
@@ -92,51 +88,60 @@ Elements use `data-i18n` attributes:
 <h2 data-i18n="skills.title"></h2>
 ```
 
-`js/lang.js` fetches the active JSON and applies `el.innerHTML = value` — which means translation values can contain HTML (links, `<strong>`, etc.).
+`js/lang.js` fetches the active JSON on load and applies `el.innerHTML = value` — so translation values can contain HTML (links, `<strong>`, etc.). The HTML also carries fallback text in English for the rare case where the fetch fails.
 
 ---
 
-## 🚀 Deploying
+## Architecture Diagrams
+
+The Architecture section uses [Mermaid](https://mermaid.js.org/) v11 loaded via ESM from jsDelivr. Diagrams are inside `<details>` elements and render lazily on first open — this avoids the known issue where Mermaid calculates SVG dimensions as 0×0 inside a hidden container.
+
+```js
+mermaid.initialize({ startOnLoad: false, ... });
+details.addEventListener("toggle", async () => {
+  if (details.open && !rendered) await mermaid.run({ nodes: ... });
+});
+```
+
+---
+
+## Deploying
 
 Every push to `main` triggers CodePipeline automatically.
 
-The `buildspec.yml` sync excludes non-public files:
+`buildspec.yml` runs a three-step sync to set correct Cache-Control headers:
 
-```yaml
-aws s3 sync . s3://${TARGET_BUCKET} --delete
-  --exclude '.git/*'
-  --exclude '.gitignore'
-  --exclude 'buildspec.yml'
-  --exclude 'README.md'
-  --exclude 'generate-og-image.html'
-  --exclude 'resume.html'
-  --exclude 'infra/*'
-```
+1. `index.html` → `no-cache, must-revalidate` (users always get the latest version)
+2. `translation/*.json` → `no-cache, must-revalidate` (content changes with each deploy)
+3. Everything else → `max-age=86400` (CSS, JS, images — 1-day browser cache)
 
-After sync, a CloudFront invalidation is created automatically.
+CloudFront invalidation targets specific paths (`/index.html /styles.css /js/* /translation/* /favicon.svg`) rather than `/*` to stay within the free tier (1000 paths/month) and complete faster.
 
 ---
 
-## 🛠 Local Dev
+## Local Dev
 
-No build step. Open `index.html` directly in a browser.
+No build step. Open `index.html` directly in a browser, or serve locally:
 
 ```bash
-# Serve locally (optional)
 npx serve .
+# or
+python3 -m http.server 8080
 ```
+
+> Translations are loaded via `fetch()`, so you need a local server — opening the file directly with `file://` will cause a CORS error on the JSON fetch.
 
 ---
 
-## 📄 Resume
+## Resume
 
 `resume.pdf` is served from S3 via the `> open resume.pdf` link in the hero section.
 
-To regenerate an improved version, open `resume.html` (gitignored, local only) in Chrome → Print → Save as PDF → replace `resume.pdf`.
+To regenerate: open `resume.html` (gitignored, local only) in Chrome → Print → Save as PDF → replace `resume.pdf`.
 
 ---
 
-## ☁️ Infrastructure (Terraform)
+## Infrastructure (Terraform)
 
 Managed in `infra/`. Apply manually:
 
@@ -146,7 +151,7 @@ terraform init
 terraform apply -var-file="terraform.tfvars"
 ```
 
-Required `.tfvars` (gitignored):
+Required `terraform.tfvars` (gitignored):
 
 ```hcl
 site_bucket_name = "your-bucket-name"
@@ -154,4 +159,4 @@ site_bucket_name = "your-bucket-name"
 
 ---
 
-*© 2025 Julio Reyes · Santiago, Chile 🇨🇱*
+*© 2026 Julio Reyes · Santiago, Chile 🇨🇱*
