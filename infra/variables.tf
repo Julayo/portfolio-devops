@@ -33,6 +33,12 @@ variable "github_repo" {
   default     = "Julayo/portfolio-devops"
 }
 
+variable "codestar_connection_name" {
+  description = "Name of the CodeStar/CodeConnections GitHub connection (changing it replaces the connection)."
+  type        = string
+  default     = "github-portfolio-devops"
+}
+
 variable "tags" {
   description = "Common tags applied to all resources."
   type        = map(string)

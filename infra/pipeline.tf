@@ -110,7 +110,7 @@ resource "aws_codebuild_project" "site" {
 
 # --- CodeStar (GitHub) connection ---
 resource "aws_codestarconnections_connection" "github" {
-  name          = "github-${var.project_name}"
+  name          = var.codestar_connection_name
   provider_type = "GitHub"
 }
 
