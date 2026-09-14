@@ -9,3 +9,6 @@ terraform.tfstate.backup
 # Sensitive user files
 *.tfvars
 crash.log
+
+# IAM policy delivery artifacts (account-specific, keep out of public repo)
+iam/

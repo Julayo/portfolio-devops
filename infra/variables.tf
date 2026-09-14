@@ -1,37 +1,48 @@
 variable "aws_region" {
-  description = "Región principal de AWS para la infraestructura."
+  description = "Main AWS region for the infrastructure."
   type        = string
   default     = "us-west-2"
 }
 
-variable "site_bucket_name" {
-  description = "Nombre del bucket S3 donde se aloja el sitio estático."
-  type        = string
-}
-
 variable "project_name" {
-  description = "Nombre lógico del proyecto."
+  description = "Logical project name; used to name and tag resources."
   type        = string
   default     = "portfolio-devops"
 }
 
-variable "tags" {
-  description = "Tags comunes para los recursos."
-  type        = map(string)
-  default = {
-    Environment = "dev"
-  }
-}
-
-# Dominio custom
 variable "domain_name" {
-  description = "Dominio del portfolio."
+  description = "Public custom domain for the site."
   type        = string
   default     = "julayo-dev.com"
 }
 
 variable "hosted_zone_id" {
-  description = "Hosted Zone ID de Route 53 para el dominio."
+  description = "Route53 Hosted Zone ID that owns domain_name."
   type        = string
   default     = "Z0305295VR3EQCJOGGXX"
+}
+
+variable "site_bucket_name" {
+  description = "Globally-unique S3 bucket name for the site files. No default on purpose — set it in terraform.tfvars."
+  type        = string
+}
+
+variable "github_repo" {
+  description = "GitHub repo (owner/name) that CodePipeline deploys from."
+  type        = string
+  default     = "Julayo/portfolio-devops"
+}
+
+variable "codestar_connection_name" {
+  description = "Name of the CodeStar/CodeConnections GitHub connection (changing it replaces the connection)."
+  type        = string
+  default     = "github-portfolio-devops"
+}
+
+variable "tags" {
+  description = "Common tags applied to all resources."
+  type        = map(string)
+  default = {
+    Environment = "dev"
+  }
 }

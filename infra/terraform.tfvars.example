@@ -1,0 +1,28 @@
+# Copy to terraform.tfvars and fill in. terraform.tfvars is gitignored.
+# ---------------------------------------------------------------------------
+# These four are the ONLY values you must provide to stand up a new static site
+# (the rest have sensible defaults in variables.tf).
+# ---------------------------------------------------------------------------
+
+# Logical name — prefixes every resource. Lowercase, no spaces.
+project_name = "portfolio-devops"
+
+# The domain the site is served on. You must already own it and have a
+# Route53 hosted zone for it (see hosted_zone_id below).
+domain_name = "julayo-dev.com"
+
+# Route53 Hosted Zone ID for domain_name.
+# Find it: aws route53 list-hosted-zones --query "HostedZones[].[Name,Id]" --output text
+hosted_zone_id = "Z0305295VR3EQCJOGGXX"
+
+# Globally-unique S3 bucket name that stores the site files.
+# Must be unique across ALL of AWS. Convention: "<project>-site".
+site_bucket_name = "CHANGE-ME-portfolio-devops-site"
+
+# --- Optional overrides -----------------------------------------------------
+# aws_region  = "us-west-2"
+# github_repo = "Julayo/portfolio-devops"   # repo CodePipeline deploys from
+# tags = {
+#   Environment = "dev"
+#   Owner       = "julayo"
+# }
