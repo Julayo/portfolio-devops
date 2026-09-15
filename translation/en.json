@@ -1,6 +1,5 @@
 {
   "siteTitle": "Senior DevOps · Platform Engineer",
-
   "nav": {
     "home": "Home",
     "architecture": "Infra & CI/CD",
@@ -9,18 +8,15 @@
     "tutorials": "Tutorials",
     "contact": "Contact"
   },
-
   "home": {
     "title": "julayo@dev:~$ whoami",
     "cmdProjects": "> ls projects/",
     "cmdTutorials": "> cat tutorials/",
     "cmdResume": "> open resume.pdf"
   },
-
   "about": {
     "body": "<p>Senior DevOps / Platform Engineer with 10+ years building and running enterprise CI/CD and cloud infrastructure — in banking and high-volume e-commerce, where deploys have to be boring and failures are expensive.</p><p>AWS Certified Solutions Architect. Deep with OpenShift/Kubernetes and a broad delivery toolchain (Harness, Jenkins, UrbanCode, TeamCity, CodePipeline). I also run production-grade AI infrastructure at home — GPU model serving, GitOps, mesh networking.</p><p>I'm also a dad, which taught me ruthless prioritization: no ceremony, no complexity that doesn't earn its place. I got into DevOps because I hate doing the same thing twice — if it's tedious and repetitive, automate it.</p><p>Based in Santiago, Chile 🇨🇱 — open to senior IC roles, remote-friendly for teams in the USA or LATAM.</p>"
   },
-
   "architecture": {
     "title": "Infrastructure & CI/CD",
     "subtitle": "Three real systems I designed and run. Every diagram below reflects something live in production — not a whiteboard sketch.",
@@ -32,7 +28,6 @@
     "homelabDesc": "One repo as source of truth across a workstation/AI server, a NAS and a public VPS. Nodes deploy by pulling from Git — no manual changes. 5-copy redundancy, Caddy + TLS, Tailscale mesh over CGNAT.",
     "toggleDiagram": "Show diagram"
   },
-
   "skills": {
     "title": "Key skills",
     "item1": "CI/CD across a broad toolchain: Harness, Jenkins, UrbanCode Deploy, TeamCity, GitHub Actions (OIDC), AWS CodePipeline & CodeBuild.",
@@ -42,7 +37,6 @@
     "item5": "Automation & scripting in Python, Bash and Groovy for build, deploy and toil removal.",
     "item6": "Platform & networking: Linux, Caddy, Tailscale, TLS/OIDC, secrets management, observability (Prometheus/Grafana)."
   },
-
   "projects": {
     "title": "Projects",
     "directoryTitle": "projects/",
@@ -59,19 +53,18 @@
     "item3": {
       "name": "delete-from-site/",
       "desc": "Static site with keyless CI/CD — GitHub Actions federating into AWS via OIDC (no long-lived keys) → S3 sync → CloudFront invalidation."
-    }
+    },
+    "linkGuides": "Guides →"
   },
-
   "tutorials": {
     "title": "Tutorials",
     "intro": "Step-by-step guides for standing up real services. No fluff — the commands that actually work.",
     "linkRead": "Read →",
     "item1": {
-      "name": "deploy-static-site-aws/",
-      "desc": "Deploy a static site on AWS with Terraform — private S3 + CloudFront (OAC) + ACM TLS + Route53, from zero to live, with remote state."
+      "name": "self-hosting-with-compose/",
+      "desc": "Copy-paste Docker Compose guides — stand up Gitea, SilverBullet, Vaultwarden, Uptime-Kuma and Caddy (reverse proxy + TLS). Plus: a static site on AWS with Terraform."
     }
   },
-
   "contact": {
     "title": "Contact",
     "email": "📧 Email: <a href=\"mailto:julioreyesrepiso@gmail.com\">julioreyesrepiso@gmail.com</a>",
@@ -80,7 +73,6 @@
     "location": "📍 Location: Santiago, Chile 🇨🇱 (Remote-friendly for USA / LATAM)",
     "consulting": "💼 Open to senior IC roles: Platform / SRE / Cloud / MLOps."
   },
-
   "footer": {
     "text": "© 2026 Julio Reyes — Senior DevOps / Platform Engineer"
   }

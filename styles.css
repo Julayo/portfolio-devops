@@ -653,3 +653,31 @@ a:focus-visible, button:focus-visible {
 .callout { background: rgba(124,255,154,.07); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 6px; padding: .9rem 1.1rem; margin: 0 0 1.2rem; color: var(--text); font-size: .92rem; }
 .callout strong { color: var(--accent); }
 .tut-index { display: grid; gap: 1rem; margin-bottom: 2.5rem; }
+
+/* ── copy button + tutorial cards ─────────────────── */
+.doc pre { position: relative; padding-top: 2.4rem; }
+.copy-btn {
+  position: absolute; top: 7px; right: 7px;
+  font-family: var(--mono); font-size: .66rem;
+  background: var(--panel); color: var(--muted);
+  border: 1px solid var(--line); border-radius: 5px;
+  padding: .2rem .55rem; cursor: pointer; opacity: .75; transition: .15s;
+}
+.copy-btn:hover { color: var(--accent); border-color: var(--accent); opacity: 1; }
+.copy-btn.copied { color: var(--accent); border-color: var(--accent); opacity: 1; }
+.tut-cards { display: grid; gap: .8rem; grid-template-columns: 1fr; margin: 1rem 0 2rem; }
+@media (min-width: 640px){ .tut-cards { grid-template-columns: 1fr 1fr; } }
+.tut-cardx { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.1rem; transition: border-color .15s, transform .12s; }
+.tut-cardx:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.tut-cardx .n { font-family: var(--mono); color: var(--accent); font-size: .72rem; }
+.tut-cardx .t { display: block; color: var(--text); margin-top: .25rem; font-size: .95rem; }
+.tut-cardx .d { display: block; color: var(--muted); font-size: .8rem; margin-top: .3rem; }
+.svc-meta { font-family: var(--mono); font-size: .74rem; color: var(--muted); margin: .2rem 0 1.1rem; }
+.svc-meta .port { color: var(--accent); }
+
+/* ── tutorial links list (CV) ─────────────────────── */
+.tut-links { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: .5rem; grid-template-columns: 1fr; }
+@media (min-width: 620px){ .tut-links { grid-template-columns: 1fr 1fr; } }
+.tut-links a { display: block; font-family: var(--mono); font-size: .88rem; color: var(--accent2); padding: .5rem .7rem; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); transition: border-color .15s, transform .12s; }
+.tut-links a:hover { border-color: var(--accent); transform: translateX(2px); text-decoration: none; }
+.tut-links a span { color: var(--muted); font-size: .78rem; }
