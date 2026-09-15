@@ -1,44 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="UTF-8">
     <title>404 · Julio Reyes</title>
-    <meta name="robots" content="noindex" />
-    <meta name="theme-color" content="#0c0f14" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header id="hdr">
-      <div class="wrap nav">
-        <a class="logo" href="index.html">julio<span class="accent">@</span>reyes:~$</a>
-        <ul class="nav-links">
-          <li><a href="index.html#projects">projects</a></li>
-          <li><a href="tutorials.html">tutorials</a></li>
-        </ul>
-      </div>
-    </header>
-    <main>
-      <section class="hero wrap" style="padding-block:7rem 5rem">
-        <p class="term-prompt"><span class="accent">$</span> cat page.html</p>
-        <h1 style="font-size:clamp(2.4rem,10vw,4.5rem)">404</h1>
-        <p class="role" style="color:var(--warn)">No such file or directory</p>
-        <p class="pitch">That page doesn't exist. Let's get you back to something that does.</p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="index.html">← cd ~</a>
-          <a class="btn btn-ghost" href="tutorials.html">tutorials</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top-bar">
+    <div class="logo">&lt;/&gt; <span>Senior DevOps · Platform Engineer</span></div>
+</header>
+<nav class="main-nav" aria-label="Primary">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="tutorials.html">Tutorials</a>
+    <a href="index.html#contact">Contact</a>
+</nav>
+<main class="content">
+    <section class="section">
+        <div class="terminal-hero">
+            <h1 class="prompt-line">julayo@dev:~$ cat 404<span class="cursor" aria-hidden="true">█</span></h1>
+            <div class="terminal-about about-body">
+                <p><strong>cat: /that/page: No such file or directory</strong></p>
+                <p>The page you're looking for doesn't exist. Let's get you back to something that does.</p>
+            </div>
+            <div class="hero-commands">
+                <a href="index.html">&gt; cd ~</a>
+                <a href="tutorials.html">&gt; cat tutorials/</a>
+            </div>
         </div>
-      </section>
-    </main>
-    <footer>
-      <div class="wrap foot">
-        <span class="copy">© 2026 Julio Reyes</span>
-        <nav><a href="index.html">home</a></nav>
-      </div>
-    </footer>
-  </body>
+    </section>
+</main>
+<footer class="footer">
+    <span>© 2026 Julio Reyes — Senior DevOps / Platform Engineer</span>
+</footer>
+</body>
 </html>
