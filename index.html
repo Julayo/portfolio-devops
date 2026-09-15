@@ -25,7 +25,7 @@
         <a class="logo" href="/">julio<span class="accent">@</span>reyes:~$</a>
         <ul class="nav-links">
           <li><a href="#experience">experience</a></li>
-          <li><a href="#projects">projects</a></li>
+          <li><a href="#infra">infra</a></li>
           <li><a href="tutorials.html">tutorials</a></li>
           <li><a href="#contact">contact</a></li>
         </ul>
@@ -132,6 +132,55 @@
                 <li>Software/DB analyst and L2 support for telecom and operational platforms; automation and stored procedures.</li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INFRASTRUCTURE & CI/CD -->
+      <section id="infra" class="section">
+        <div class="wrap">
+          <div class="section-head"><h2>infrastructure &amp; ci/cd</h2><span class="hint"># systems I designed &amp; run</span></div>
+          <div class="arch">
+
+            <div class="system">
+              <div class="st-head"><h3>Homelab — 3-node GitOps platform</h3><span class="env onprem">on-prem</span></div>
+              <p>One repo as the source of truth across a workstation/AI server, a NAS, and a public VPS. No manual server changes — every node deploys by pulling from Git. GPU model serving, 5-copy Git redundancy with tested disaster recovery, Caddy reverse proxy + TLS, Tailscale mesh over CGNAT.</p>
+              <div class="flow">
+                <span class="stage src">edit config</span><span class="arrow">→</span>
+                <span class="stage">git push · 3 remotes</span><span class="arrow">→</span>
+                <span class="stage">git pull</span><span class="arrow">→</span>
+                <span class="stage">make deploy</span><span class="arrow">→</span>
+                <span class="stage out">docker compose up</span>
+              </div>
+              <p class="stack">Docker · GitOps · Caddy · Tailscale · restic</p>
+            </div>
+
+            <div class="system">
+              <div class="st-head"><h3>julayo-dev.com — AWS static-site, all IaC</h3><span class="env">aws · us-west-2</span></div>
+              <p>This CV, defined entirely in Terraform: a <strong>private</strong> S3 bucket served through CloudFront with Origin Access Control, an auto-renewing ACM certificate, and Route53 DNS. Reusable module, remote state in S3 + DynamoDB lock.</p>
+              <div class="flow">
+                <span class="stage src">git push</span><span class="arrow">→</span>
+                <span class="stage">CodePipeline</span><span class="arrow">→</span>
+                <span class="stage">CodeBuild</span><span class="arrow">→</span>
+                <span class="stage">s3 sync</span><span class="arrow">→</span>
+                <span class="stage out">CloudFront invalidate</span>
+              </div>
+              <p class="stack">Terraform · CodePipeline · CodeBuild · CloudFront · ACM · Route53</p>
+            </div>
+
+            <div class="system">
+              <div class="st-head"><h3>delete-from.com — keyless CI/CD</h3><span class="env">aws · us-west-2</span></div>
+              <p>Zero long-lived credentials: GitHub Actions federates into AWS via <strong>OIDC</strong> and assumes a scoped role at deploy time. Static hosting on S3 + CloudFront.</p>
+              <div class="flow">
+                <span class="stage src">git push</span><span class="arrow">→</span>
+                <span class="stage">GitHub Actions</span><span class="arrow">→</span>
+                <span class="stage">OIDC assume-role</span><span class="arrow">→</span>
+                <span class="stage">s3 sync</span><span class="arrow">→</span>
+                <span class="stage out">CloudFront invalidate</span>
+              </div>
+              <p class="stack">GitHub Actions · OIDC · S3 · CloudFront</p>
+            </div>
+
           </div>
         </div>
       </section>
