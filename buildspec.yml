@@ -47,4 +47,4 @@ phases:
       - >
         aws cloudfront create-invalidation
         --distribution-id ${CLOUDFRONT_DIST_ID}
-        --paths "/index.html" "/tutorials.html" "/tutorials" "/404.html" "/styles.css" "/favicon.svg"
+        --paths "/index.html" "/tutorials.html" "/tutorials" "/404.html" "/styles.css" "/favicon.svg" "/resume.pdf"
