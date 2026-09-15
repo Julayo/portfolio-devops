@@ -8,13 +8,13 @@ phases:
       - "pwd"
       - "ls -la"
 
-      # index.html and translations must never be served stale after a deploy
+      # entry pages must never be served stale after a deploy
       - >
         aws s3 cp index.html s3://${TARGET_BUCKET}/index.html
         --cache-control "no-cache, must-revalidate"
 
       - >
-        aws s3 sync translation/ s3://${TARGET_BUCKET}/translation/
+        aws s3 cp tutorials.html s3://${TARGET_BUCKET}/tutorials.html
         --cache-control "no-cache, must-revalidate"
 
       # Everything else: 1-day cache (no content hashing, so keep it short)
@@ -28,7 +28,7 @@ phases:
         --exclude 'resume.html'
         --exclude 'infra/*'
         --exclude 'index.html'
-        --exclude 'translation/*'
+        --exclude 'tutorials.html'
         --cache-control "max-age=86400"
 
   post_build:
@@ -38,4 +38,4 @@ phases:
       - >
         aws cloudfront create-invalidation
         --distribution-id ${CLOUDFRONT_DIST_ID}
-        --paths "/index.html" "/styles.css" "/js/*" "/translation/*" "/favicon.svg"
+        --paths "/index.html" "/tutorials.html" "/404.html" "/styles.css" "/favicon.svg"

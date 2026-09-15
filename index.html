@@ -1,259 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Julio Reyes - DevOps Engineer | AWS • Terraform • CI/CD</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Julio Reyes · Senior DevOps / Platform Engineer</title>
+    <meta name="description" content="Julio Reyes — Senior DevOps / Platform Engineer. AWS, Kubernetes, Terraform, CI/CD. 10+ years in banking and high-volume e-commerce. Open to remote US roles." />
+    <meta name="theme-color" content="#0c0f14" />
+    <meta property="og:title" content="Julio Reyes · Senior DevOps / Platform Engineer" />
+    <meta property="og:description" content="AWS · Kubernetes · Terraform · CI/CD. 10+ years. Runs production AI infra at home." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://julayo-dev.com" />
+    <meta property="og:image" content="/og-image.png" />
+    <link rel="canonical" href="https://julayo-dev.com" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
 
-    <!-- SEO -->
-    <meta name="description" content="DevOps engineer specializing in AWS infrastructure, Terraform, CI/CD pipelines. Available for consulting in Chile &amp; remote USA/LATAM.">
-    <meta name="keywords" content="DevOps, AWS, Terraform, CI/CD, Chile, Santiago, Remote, Platform Engineer, CodePipeline, Kubernetes">
-    <meta name="author" content="Julio Reyes">
-    <meta name="robots" content="index, follow">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://julayo-dev.com">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://julayo-dev.com">
-    <meta property="og:title" content="Julio Reyes - DevOps Engineer | AWS • Terraform • CI/CD">
-    <meta property="og:description" content="DevOps engineer specializing in AWS infrastructure, Terraform, CI/CD pipelines. Available for consulting in Chile &amp; remote USA/LATAM.">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Julio Reyes - DevOps Engineer | AWS • Terraform • CI/CD">
-    <meta name="twitter:description" content="DevOps engineer specializing in AWS infrastructure, Terraform, CI/CD pipelines. Available for consulting in Chile &amp; remote USA/LATAM.">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-    <!-- OG image (generate og-image.png from generate-og-image.html and place in root) -->
-    <meta property="og:image" content="https://julayo-dev.com/og-image.png">
-    <meta name="twitter:image" content="https://julayo-dev.com/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header class="top-bar">
-    <div class="logo">
-        &lt;/&gt; <span data-i18n="siteTitle">DevOps CI/CD Portfolio</span>
-    </div>
-
-    <!-- Language switcher -->
-    <div class="lang-switcher" role="group" aria-label="Language switcher">
-        <button type="button" class="lang-btn" data-lang="es" aria-label="Español">
-            🇨🇱 ES
-        </button>
-        <button type="button" class="lang-btn" data-lang="en" aria-label="English">
-            🇺🇸 EN
-        </button>
-    </div>
-</header>
-
-<nav class="main-nav" aria-label="Primary">
-    <a href="#home" data-i18n="nav.home">Home</a>
-    <a href="#architecture" data-i18n="nav.architecture">Architecture</a>
-    <a href="#skills" data-i18n="nav.skills">Skills</a>
-    <a href="#projects" data-i18n="nav.projects">Projects</a>
-    <a href="#lab" data-i18n="nav.lab">Lab</a>
-    <a href="#contact" data-i18n="nav.contact">Contact</a>
-</nav>
-
-<main class="content">
-    <!-- HOME -->
-    <section id="home" class="section">
-        <div class="terminal-hero">
-            <h1 class="prompt-line">
-                <span data-i18n="home.title">julayo@dev:~$ whoami</span><span class="cursor" aria-hidden="true">█</span>
-            </h1>
-            <div class="terminal-about about-body" data-i18n="about.body">
-                <p>By day, I keep pipelines running and infrastructure stable for a U.S. banking client — the kind of environment where deploys need to be boring and failures are expensive.</p>
-                <p>Outside work, I build Terraform modules, experiment with cloud infrastructure patterns, and develop an indie game. Good engineering habits don't stop at the office door.</p>
-                <p>I'm also a dad — which means I've gotten good at ruthless prioritization. No ceremony, no complexity that doesn't earn its place. It makes me a better engineer.</p>
-                <p>I got into DevOps because I hate doing the same thing twice. If a process is tedious and repetitive, it should be automated. Based in Santiago, Chile 🇨🇱 — open to remote work with teams in LATAM or the USA.</p>
-            </div>
-            <div class="hero-commands" aria-label="Quick commands">
-                <a href="#projects" data-i18n="home.cmdProjects">&gt; ls projects/</a>
-                <a href="resume.pdf" target="_blank" data-i18n="home.cmdResume">&gt; open resume.pdf</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="architecture" class="section">
-        <h2 data-i18n="architecture.title">Architecture</h2>
-        <p class="section-subtitle" data-i18n="architecture.subtitle">
-            This portfolio is deployed using AWS serverless and CI/CD. Below you can see how the pieces fit together.
-        </p>
-
-        <h3 data-i18n="architecture.awsTitle">AWS Portfolio Architecture</h3>
-        <details class="diagram-toggle">
-            <summary data-i18n="architecture.toggleDiagram">Show diagram</summary>
-            <div class="diagram-container">
-                <div class="mermaid">
-                  graph TD
-                    U[Visitor<br/>Browser] -->|HTTPS| R53[Route 53<br/>julayo-dev.com]
-                    R53 --> CF[CloudFront<br/>CDN + HTTPS]
-                    CF -->|Static files| S3[(S3 Bucket<br/>Static Site)]
-
-                    subgraph AWS["AWS Account"]
-                      R53
-                      CF
-                      S3
-                    end
-                </div>
-            </div>
-        </details>
-
-        <h3 data-i18n="architecture.pipelineTitle">CI/CD Pipeline</h3>
-        <details class="diagram-toggle">
-            <summary data-i18n="architecture.toggleDiagram">Show diagram</summary>
-            <div class="diagram-container">
-                <div class="mermaid">
-                  graph LR
-                    Dev[git push] --> GH[GitHub<br/>main branch]
-                    GH -->|webhook| CP[CodePipeline]
-
-                    subgraph PIPELINE["AWS CI/CD"]
-                      CP --> CB[CodeBuild<br/>buildspec.yml]
-                      CB -->|aws s3 sync| S3[(S3 Bucket)]
-                      CB -->|create-invalidation| CF[CloudFront]
-                    end
-
-                    S3 --- CF
-                    CF --> U[Visitors]
-                </div>
-            </div>
-        </details>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-        <h2 data-i18n="skills.title">Key skills</h2>
-        <ul class="list rows">
-            <li data-i18n="skills.item1">
-                CI/CD with Jenkins, Tekton, GitHub Actions, AWS CodePipeline and CodeBuild.
-            </li>
-            <li data-i18n="skills.item2">
-                AWS infrastructure (Lambda, S3, CloudFront, ECS/EKS, networking, IAM).
-            </li>
-            <li data-i18n="skills.item3">
-                Automation with Python and Bash for build, deploy, and housekeeping tasks.
-            </li>
-            <li data-i18n="skills.item4">
-                Containers with Docker and deployments to Kubernetes/OpenShift.
-            </li>
+    <header id="hdr">
+      <div class="wrap nav">
+        <a class="logo" href="/">julio<span class="accent">@</span>reyes:~$</a>
+        <ul class="nav-links">
+          <li><a href="#experience">experience</a></li>
+          <li><a href="#projects">projects</a></li>
+          <li><a href="tutorials.html">tutorials</a></li>
+          <li><a href="#contact">contact</a></li>
         </ul>
-    </section>
+      </div>
+    </header>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-        <div class="section-title-row">
-            <h2 data-i18n="projects.title">Projects</h2>
-            <span class="dir-label" data-i18n="projects.directoryTitle">projects/</span>
-        </div>
+    <main>
 
-        <div class="project-list">
-            <div class="project-row">
-                <div class="project-main">
-                    <span class="project-name" data-i18n="projects.item1.name">portfolio-devops/</span>
-                    <span class="project-desc" data-i18n="projects.item1.desc">This site — static portfolio on AWS, automated via CodePipeline → S3 → CloudFront, IaC in Terraform</span>
-                </div>
-                <div class="project-meta">
-                    <span class="tags">[AWS] [Terraform] [CodePipeline] [S3] [CloudFront]</span>
-                    <span class="links">
-                        <a href="https://github.com/Julayo/portfolio-devops" target="_blank" rel="noopener" data-i18n="projects.linkSource">Source</a>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SIDE PROJECTS LAB -->
-    <section id="lab" class="section">
-        <div class="section-title-row">
-            <h2 data-i18n="lab.title">🧪 Side Projects Lab</h2>
-            <span class="dir-label">lab/</span>
-        </div>
-        <p class="lab-intro" data-i18n="lab.intro">
-            Outside client work, I keep building.
+      <!-- HERO -->
+      <section class="hero wrap">
+        <p class="term-prompt"><span class="accent">$</span> whoami</p>
+        <h1>Julio Reyes</h1>
+        <p class="role">Senior DevOps / Platform Engineer</p>
+        <p class="pitch">
+          10+ years building and operating enterprise <strong>CI/CD</strong> and <strong>cloud
+          infrastructure</strong> in banking and high-volume e-commerce. AWS Certified Solutions
+          Architect. Deep with OpenShift/Kubernetes and a broad delivery toolchain — and I run
+          <strong>production-grade AI infrastructure at home</strong> (GPU model serving, GitOps,
+          mesh networking). Looking for a senior IC role with real technical ownership.
         </p>
-
-        <h3 data-i18n="lab.currentTitle">What I'm building:</h3>
-
-        <div class="lab-list">
-            <div class="lab-item">
-                <div class="lab-item-header">
-                    <span class="lab-num">01.</span>
-                    <span class="lab-name" data-i18n="lab.item1.name">Terraform IaC modules</span>
-                    <span class="lab-status status-dev" data-i18n="lab.item1.status">🔧 WIP</span>
-                </div>
-                <p class="lab-desc" data-i18n="lab.item1.desc">AWS infrastructure patterns and reusable modules — VPC, ECS, S3 pipelines. In progress on GitHub.</p>
-                <span class="tags" data-i18n="lab.item1.tech">[Terraform] [AWS] [HCL]</span>
-            </div>
-
-            <div class="lab-item">
-                <div class="lab-item-header">
-                    <span class="lab-num">02.</span>
-                    <span class="lab-name" data-i18n="lab.item2.name">Indie game dev</span>
-                    <span class="lab-status status-dev" data-i18n="lab.item2.status">🎮 Ongoing</span>
-                </div>
-                <p class="lab-desc" data-i18n="lab.item2.desc">2D platformer built in Godot in my free time. Personal project, not a product.</p>
-                <span class="tags" data-i18n="lab.item2.tech">[Godot] [GDScript]</span>
-            </div>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener">↓ Résumé (PDF)</a>
+          <a class="btn btn-ghost" href="mailto:julioreyesrepiso@gmail.com">Email</a>
+          <a class="btn btn-ghost" href="https://github.com/Julayo" target="_blank" rel="noopener">GitHub</a>
         </div>
-    </section>
+        <div class="hero-meta">
+          <span><span class="dot">◇</span> Santiago, Chile</span>
+          <span><span class="dot">◇</span> Open to remote US roles</span>
+          <span><span class="dot">◇</span> ES (native) · EN (advanced)</span>
+        </div>
+      </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-        <h2 data-i18n="contact.title">Contact</h2>
-        <ul class="contact-list rows">
-            <li data-i18n="contact.email">
-                📧 Email: <a href="mailto:julioreyesrepiso@gmail.com">julioreyesrepiso@gmail.com</a>
-            </li>
-            <li data-i18n="contact.linkedin">
-                🔗 LinkedIn: <a href="https://www.linkedin.com/in/julio-reyes-repiso-78a87454/" target="_blank" rel="noopener">linkedin.com/in/julioreyes-devops</a>
-            </li>
-            <li data-i18n="contact.github">
-                🐙 GitHub: <a href="https://github.com/Julayo" target="_blank" rel="noopener">github.com/julioreyes</a>
-            </li>
-            <li data-i18n="contact.location">
-                📍 Location: Santiago, Chile 🇨🇱 (Remote-friendly for USA / LATAM)
-            </li>
-            <li data-i18n="contact.consulting">
-                💼 Available for consulting: AWS infrastructure, CI/CD pipelines, DevOps automation.
-            </li>
-        </ul>
-    </section>
-</main>
+      <!-- SKILLS -->
+      <section id="skills" class="section">
+        <div class="wrap">
+          <div class="section-head"><h2>stack</h2><span class="hint"># what I work with</span></div>
+          <div class="skills">
+            <div class="skill">
+              <p class="k">CI/CD &amp; Delivery</p>
+              <p class="v"><span class="tagx">Harness</span><span class="tagx">Jenkins</span><span class="tagx">UrbanCode Deploy</span><span class="tagx">TeamCity</span><span class="tagx">Lightspeed</span><span class="tagx">GitHub Actions (OIDC)</span><span class="tagx">AWS CodePipeline/CodeBuild</span><span class="tagx">Bitbucket</span></p>
+            </div>
+            <div class="skill">
+              <p class="k">Containers &amp; Orchestration</p>
+              <p class="v"><span class="tagx">OpenShift</span><span class="tagx">Kubernetes</span><span class="tagx">Docker</span><span class="tagx">Helm</span></p>
+            </div>
+            <div class="skill">
+              <p class="k">Cloud — AWS</p>
+              <p class="v"><span class="tagx">EC2</span><span class="tagx">Lambda</span><span class="tagx">S3</span><span class="tagx">IAM</span><span class="tagx">VPC</span><span class="tagx">CloudFront</span><span class="tagx">Route53</span><span class="tagx">ACM</span><span class="tagx">CloudWatch</span></p>
+            </div>
+            <div class="skill">
+              <p class="k">IaC &amp; Automation</p>
+              <p class="v"><span class="tagx">Terraform (modules, remote state)</span><span class="tagx">Ansible</span><span class="tagx">Python</span><span class="tagx">Bash</span><span class="tagx">Groovy</span></p>
+            </div>
+            <div class="skill">
+              <p class="k">Observability</p>
+              <p class="v"><span class="tagx">Prometheus</span><span class="tagx">Grafana</span><span class="tagx">ELK</span><span class="tagx">CloudWatch</span></p>
+            </div>
+            <div class="skill">
+              <p class="k">Platform / Networking</p>
+              <p class="v"><span class="tagx">Linux</span><span class="tagx">Git</span><span class="tagx">Caddy</span><span class="tagx">Tailscale</span><span class="tagx">TLS / OIDC</span><span class="tagx">Secrets mgmt</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<footer class="footer">
-    <span data-i18n="footer.text">
-        © 2026 Julio Reyes - DevOps CI/CD Portfolio
-    </span>
-</footer>
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section">
+        <div class="wrap">
+          <div class="section-head"><h2>experience</h2><span class="hint"># 10+ years</span></div>
+          <div class="xp">
+            <div class="job">
+              <div class="top"><h3><span class="co">Citi</span> — DevOps Engineer</h3><span class="when">Nov 2023 – Present</span></div>
+              <ul>
+                <li>Operate and optimize CI/CD pipelines for mission-critical banking apps across <strong>6+ internal application teams</strong>, on a multi-tool stack (Jenkins, TeamCity, UrbanCode Deploy, Harness, Lightspeed) targeting OpenShift.</li>
+                <li>Built automated integrations across the delivery toolchain, cutting deployment lead time by an estimated <strong>~40%</strong> and removing manual release steps.</li>
+                <li>Automated environment provisioning and release tasks (Python/Bash/Groovy), removing <strong>5+ hrs/week</strong> of manual toil.</li>
+                <li>Standardized branching and repo governance across GitHub/Bitbucket, improving cross-team release reliability.</li>
+              </ul>
+            </div>
+            <div class="job">
+              <div class="top"><h3><span class="co">Kibernum</span> — DevOps Engineer (Remote)</h3><span class="when">Apr 2023 – Nov 2023</span></div>
+              <ul>
+                <li>Designed automated pipelines with TeamCity and Bitbucket.</li>
+                <li>Ran OpenShift deployments for HA / resilient production systems.</li>
+              </ul>
+            </div>
+            <div class="job">
+              <div class="top"><h3><span class="co">carsales.com.au</span> — DevOps Engineer</h3><span class="when">Apr 2021 – Apr 2023</span></div>
+              <ul>
+                <li>Built and maintained CI/CD for high-transaction e-commerce platforms.</li>
+                <li><strong>Automated report generation for all dealer clients</strong> (custom + normalized formats), eliminating a major recurring manual effort.</li>
+                <li>Migrated workloads to Kubernetes/OpenShift, refining deployment cycle times.</li>
+              </ul>
+            </div>
+            <div class="job">
+              <div class="top"><h3><span class="co">Aligare</span> — Systems Support → DevOps Engineer</h3><span class="when">Apr 2019 – Mar 2021</span></div>
+              <ul>
+                <li>Grew from support into DevOps/sysadmin ownership; managed <strong>up to 4 concurrent AWS accounts</strong>, automated operations, authored team standards.</li>
+              </ul>
+            </div>
+            <div class="job">
+              <div class="top"><h3><span class="co">Atentus</span> · <span class="co">AKZIO</span> — earlier roles</h3><span class="when">2013 – 2019</span></div>
+              <ul>
+                <li>Software/DB analyst and L2 support for telecom and operational platforms; automation and stored procedures.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- Scripts -->
-<script src="js/lang.js" defer></script>
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="wrap">
+          <div class="section-head"><h2>projects</h2><span class="hint"># public, verifiable</span></div>
+          <div class="projects">
+            <div class="proj">
+              <h3>Homelab</h3>
+              <span class="repo">github.com/Julayo/homelab</span>
+              <p>3-node GitOps infrastructure. GPU model serving (Ollama, Open-WebUI, ComfyUI), 5-copy Git redundancy with tested disaster recovery, Caddy reverse proxy + TLS, Tailscale mesh + Route53 over CGNAT.</p>
+              <p class="stack">Docker · GitOps · Caddy · Tailscale · restic</p>
+            </div>
+            <div class="proj">
+              <h3>julayo-dev.com — this site</h3>
+              <span class="repo">github.com/Julayo/portfolio-devops</span>
+              <p>AWS static-site reference architecture in Terraform: private S3 + CloudFront (OAC), ACM DNS-validated cert, Route53. CI/CD via CodePipeline → CodeBuild. Reusable module, remote state.</p>
+              <p class="stack">Terraform · CloudFront · CodePipeline · ACM</p>
+            </div>
+            <div class="proj">
+              <h3>delete-from.com</h3>
+              <span class="repo">github.com/Julayo/delete-from-site</span>
+              <p>Static site with keyless CI/CD: GitHub Actions using AWS OIDC federation (no long-lived keys) → S3 sync → CloudFront invalidation.</p>
+              <p class="stack">GitHub Actions · OIDC · S3 · CloudFront</p>
+            </div>
+            <div class="proj">
+              <h3>PINTADA (game infra)</h3>
+              <span class="repo">delete-from.com/devlog</span>
+              <p>Indie game built in Godot 4 on rescued time — with a public devlog. A different kind of "shipping".</p>
+              <p class="stack">Godot 4 · GDScript · Git multi-remote</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<script type="module">
-  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      <!-- CERTS -->
+      <section id="certs" class="section">
+        <div class="wrap">
+          <div class="section-head"><h2>certifications</h2></div>
+          <div class="certs">
+            <div class="cert"><span class="status">[✓]</span> AWS Certified Solutions Architect – Associate <span style="color:var(--muted2)">· 2026</span></div>
+            <div class="cert"><span class="status wip">[~]</span> HashiCorp Terraform Associate <span style="color:var(--muted2)">· in progress</span></div>
+            <div class="cert"><span class="status plan">[ ]</span> CKA — Certified Kubernetes Administrator <span style="color:var(--muted2)">· planned</span></div>
+          </div>
+        </div>
+      </section>
 
-  mermaid.initialize({ startOnLoad: false, theme: "dark", securityLevel: "loose" });
+      <!-- TUTORIALS TEASER -->
+      <section id="tutorials" class="section">
+        <div class="wrap">
+          <div class="section-head"><h2>tutorials</h2><span class="hint"># stand up real services, step by step</span></div>
+          <div class="cards">
+            <a class="tut-card" href="tutorials.html#static-site-aws">
+              <span class="kicker">AWS · Terraform</span>
+              <h3>Deploy a static site on AWS with Terraform (S3 + CloudFront + ACM)</h3>
+              <p>The exact reusable module behind this site — private bucket, CDN, TLS and DNS, from zero to live.</p>
+            </a>
+            <a class="tut-card" href="tutorials.html">
+              <span class="kicker">more</span>
+              <h3 class="soon">More step-by-step guides on the way…</h3>
+              <p>Self-hosting with Docker Compose, GitOps deploys, keyless CI/CD with OIDC.</p>
+            </a>
+          </div>
+        </div>
+      </section>
 
-  document.querySelectorAll("details.diagram-toggle").forEach((details) => {
-    let rendered = false;
-    details.addEventListener("toggle", async () => {
-      if (details.open && !rendered) {
-        rendered = true;
-        await mermaid.run({ nodes: details.querySelectorAll(".mermaid") });
-      }
-    });
-  });
-</script>
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="wrap">
+          <div class="section-head"><h2>contact</h2></div>
+          <p style="color:var(--muted);max-width:52ch">Open to senior IC roles in Platform / SRE / Cloud / MLOps — remote-friendly. The fastest way to reach me:</p>
+          <div class="hero-cta" style="margin-top:1.2rem">
+            <a class="btn btn-primary" href="mailto:julioreyesrepiso@gmail.com">julioreyesrepiso@gmail.com</a>
+            <a class="btn btn-ghost" href="https://github.com/Julayo" target="_blank" rel="noopener">github.com/Julayo</a>
+          </div>
+        </div>
+      </section>
 
-</body>
+    </main>
+
+    <footer>
+      <div class="wrap foot">
+        <span class="copy">© 2026 Julio Reyes · built with Terraform + CloudFront</span>
+        <nav>
+          <a href="tutorials.html">tutorials</a>
+          <a href="https://github.com/Julayo" target="_blank" rel="noopener">github</a>
+          <a href="resume.pdf" target="_blank" rel="noopener">résumé</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var h = document.getElementById("hdr");
+        var f = function () { h.classList.toggle("scrolled", window.scrollY > 8); };
+        window.addEventListener("scroll", f, { passive: true }); f();
+      })();
+    </script>
+  </body>
 </html>
