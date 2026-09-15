@@ -31,6 +31,15 @@ phases:
         --exclude 'tutorials.html'
         --cache-control "max-age=86400"
 
+      # Clean ("pretty") URLs: the bucket is private + served via OAC, so S3
+      # can't auto-resolve /tutorials -> tutorials.html. Publish an extra
+      # extensionless copy with an explicit text/html type. Must run AFTER the
+      # `sync --delete` above, or the sync would prune it.
+      - >
+        aws s3 cp tutorials.html s3://${TARGET_BUCKET}/tutorials
+        --content-type "text/html"
+        --cache-control "no-cache, must-revalidate"
+
   post_build:
     commands:
       - "echo == CloudFront invalidation =="
@@ -38,4 +47,4 @@ phases:
       - >
         aws cloudfront create-invalidation
         --distribution-id ${CLOUDFRONT_DIST_ID}
-        --paths "/index.html" "/tutorials.html" "/404.html" "/styles.css" "/favicon.svg"
+        --paths "/index.html" "/tutorials.html" "/tutorials" "/404.html" "/styles.css" "/favicon.svg"
