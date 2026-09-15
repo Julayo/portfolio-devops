@@ -1,80 +1,87 @@
 {
-  "siteTitle": "DevOps CI/CD Portfolio",
+  "siteTitle": "Senior DevOps · Platform Engineer",
 
   "nav": {
     "home": "Home",
+    "architecture": "Infra & CI/CD",
     "skills": "Skills",
     "projects": "Projects",
-    "architecture": "Architecture",
-    "lab": "Lab",
+    "tutorials": "Tutorials",
     "contact": "Contact"
   },
 
   "home": {
     "title": "julayo@dev:~$ whoami",
-    "subtitle": "DevOps / Platform Engineer (AWS • Terraform • CI/CD • Kubernetes)",
     "cmdProjects": "> ls projects/",
+    "cmdTutorials": "> cat tutorials/",
     "cmdResume": "> open resume.pdf"
   },
 
   "about": {
-    "body": "<p>By day, I keep pipelines running and infrastructure stable for a U.S. banking client — the kind of environment where deploys need to be boring and failures are expensive.</p><p>Outside work, I build Terraform modules, experiment with cloud infrastructure patterns, and develop an indie game. Good engineering habits don't stop at the office door.</p><p>I'm also a dad — which means I've gotten good at ruthless prioritization. No ceremony, no complexity that doesn't earn its place. It makes me a better engineer.</p><p>I got into DevOps because I hate doing the same thing twice. If a process is tedious and repetitive, it should be automated. Based in Santiago, Chile 🇨🇱 — open to remote work with teams in LATAM or the USA.</p>"
+    "body": "<p>Senior DevOps / Platform Engineer with 10+ years building and running enterprise CI/CD and cloud infrastructure — in banking and high-volume e-commerce, where deploys have to be boring and failures are expensive.</p><p>AWS Certified Solutions Architect. Deep with OpenShift/Kubernetes and a broad delivery toolchain (Harness, Jenkins, UrbanCode, TeamCity, CodePipeline). I also run production-grade AI infrastructure at home — GPU model serving, GitOps, mesh networking.</p><p>I'm also a dad, which taught me ruthless prioritization: no ceremony, no complexity that doesn't earn its place. I got into DevOps because I hate doing the same thing twice — if it's tedious and repetitive, automate it.</p><p>Based in Santiago, Chile 🇨🇱 — open to senior IC roles, remote-friendly for teams in the USA or LATAM.</p>"
+  },
+
+  "architecture": {
+    "title": "Infrastructure & CI/CD",
+    "subtitle": "Three real systems I designed and run. Every diagram below reflects something live in production — not a whiteboard sketch.",
+    "awsTitle": "1 · julayo-dev.com — AWS static site (all IaC)",
+    "awsDesc": "This CV, defined entirely in Terraform: a private S3 bucket served through CloudFront (Origin Access Control), auto-renewing ACM cert, Route53 DNS. Deployed by CodePipeline → CodeBuild.",
+    "deletefromTitle": "2 · delete-from.com — keyless CI/CD (OIDC)",
+    "deletefromDesc": "Zero long-lived credentials: GitHub Actions federates into AWS via OIDC and assumes a scoped role at deploy time. Static hosting on S3 + CloudFront.",
+    "homelabTitle": "3 · Homelab — 3-node GitOps platform (on-prem)",
+    "homelabDesc": "One repo as source of truth across a workstation/AI server, a NAS and a public VPS. Nodes deploy by pulling from Git — no manual changes. 5-copy redundancy, Caddy + TLS, Tailscale mesh over CGNAT.",
+    "toggleDiagram": "Show diagram"
   },
 
   "skills": {
     "title": "Key skills",
-    "item1": "CI/CD with Jenkins, Tekton, GitHub Actions, AWS CodePipeline and CodeBuild.",
-    "item2": "AWS infrastructure (Lambda, S3, CloudFront, ECS/EKS, networking, IAM).",
-    "item3": "Automation with Python and Bash for build, deploy, and housekeeping tasks.",
-    "item4": "Containers with Docker and deployments to Kubernetes/OpenShift."
+    "item1": "CI/CD across a broad toolchain: Harness, Jenkins, UrbanCode Deploy, TeamCity, GitHub Actions (OIDC), AWS CodePipeline & CodeBuild.",
+    "item2": "AWS infrastructure: S3, CloudFront, ACM, Route53, IAM, VPC, Lambda, CloudWatch.",
+    "item3": "Infrastructure as Code with Terraform (reusable modules, remote state) and Ansible.",
+    "item4": "Containers & orchestration: Docker, Kubernetes, OpenShift, Helm.",
+    "item5": "Automation & scripting in Python, Bash and Groovy for build, deploy and toil removal.",
+    "item6": "Platform & networking: Linux, Caddy, Tailscale, TLS/OIDC, secrets management, observability (Prometheus/Grafana)."
   },
 
   "projects": {
     "title": "Projects",
     "directoryTitle": "projects/",
     "linkSource": "Source",
+    "linkLive": "Live",
     "item1": {
-      "name": "portfolio-devops/",
-      "desc": "This site — static portfolio on AWS, automated via CodePipeline → S3 → CloudFront, IaC in Terraform"
-    }
-  },
-
-  "lab": {
-    "title": "🧪 Side Projects Lab",
-    "intro": "Outside client work, I keep building.",
-    "currentTitle": "What I'm building:",
-    "item1": {
-      "name": "Terraform IaC modules",
-      "desc": "AWS infrastructure patterns and reusable modules — VPC, ECS, S3 pipelines. In progress on GitHub.",
-      "tech": "[Terraform] [AWS] [HCL]",
-      "status": "🔧 WIP"
+      "name": "homelab/",
+      "desc": "3-node GitOps platform — Docker, GPU model serving, Caddy + TLS, Tailscale mesh, 5-copy Git redundancy with tested DR."
     },
     "item2": {
-      "name": "Indie game dev",
-      "desc": "2D platformer built in Godot in my free time. Personal project, not a product.",
-      "tech": "[Godot] [GDScript]",
-      "status": "🎮 Ongoing"
+      "name": "portfolio-devops/",
+      "desc": "This site — AWS static-site reference architecture in Terraform (private S3 + CloudFront/OAC, ACM, Route53), CI/CD via CodePipeline → CodeBuild."
+    },
+    "item3": {
+      "name": "delete-from-site/",
+      "desc": "Static site with keyless CI/CD — GitHub Actions federating into AWS via OIDC (no long-lived keys) → S3 sync → CloudFront invalidation."
     }
   },
 
-  "architecture": {
-    "title": "Architecture",
-    "subtitle": "This portfolio is deployed using AWS serverless and CI/CD. Below you can see how the pieces fit together.",
-    "awsTitle": "AWS Portfolio Architecture",
-    "pipelineTitle": "CI/CD Pipeline",
-    "toggleDiagram": "Show diagram"
+  "tutorials": {
+    "title": "Tutorials",
+    "intro": "Step-by-step guides for standing up real services. No fluff — the commands that actually work.",
+    "linkRead": "Read →",
+    "item1": {
+      "name": "deploy-static-site-aws/",
+      "desc": "Deploy a static site on AWS with Terraform — private S3 + CloudFront (OAC) + ACM TLS + Route53, from zero to live, with remote state."
+    }
   },
 
   "contact": {
     "title": "Contact",
     "email": "📧 Email: <a href=\"mailto:julioreyesrepiso@gmail.com\">julioreyesrepiso@gmail.com</a>",
-    "linkedin": "🔗 LinkedIn: <a href=\"https://www.linkedin.com/in/julio-reyes-repiso-78a87454/\" target=\"_blank\" rel=\"noopener\">linkedin.com/in/julioreyes-devops</a>",
+    "linkedin": "🔗 LinkedIn: <a href=\"https://www.linkedin.com/in/julio-reyes-repiso-78a87454/\" target=\"_blank\" rel=\"noopener\">linkedin.com/in/julio-reyes-repiso</a>",
     "github": "🐙 GitHub: <a href=\"https://github.com/Julayo\" target=\"_blank\" rel=\"noopener\">github.com/Julayo</a>",
     "location": "📍 Location: Santiago, Chile 🇨🇱 (Remote-friendly for USA / LATAM)",
-    "consulting": "💼 Available for consulting: AWS infrastructure, CI/CD pipelines, DevOps automation."
+    "consulting": "💼 Open to senior IC roles: Platform / SRE / Cloud / MLOps."
   },
 
   "footer": {
-    "text": "© 2026 Julio Reyes - DevOps CI/CD Portfolio"
+    "text": "© 2026 Julio Reyes — Senior DevOps / Platform Engineer"
   }
 }

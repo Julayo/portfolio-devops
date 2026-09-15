@@ -1,98 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tutorials · Julio Reyes</title>
-    <meta name="description" content="Step-by-step guides for standing up real services: AWS, Terraform, CI/CD, self-hosting." />
-    <meta name="theme-color" content="#0c0f14" />
-    <link rel="canonical" href="https://julayo-dev.com/tutorials" />
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <title>Tutorials · Julio Reyes — DevOps</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Step-by-step guides for standing up real services: AWS, Terraform, CI/CD, self-hosting.">
+    <link rel="canonical" href="https://julayo-dev.com/tutorials">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top-bar">
+    <div class="logo">&lt;/&gt; <span data-i18n="siteTitle">Senior DevOps · Platform Engineer</span></div>
+    <div class="lang-switcher" role="group" aria-label="Language switcher">
+        <button type="button" class="lang-btn" data-lang="es" aria-label="Español">🇨🇱 ES</button>
+        <button type="button" class="lang-btn" data-lang="en" aria-label="English">🇺🇸 EN</button>
+    </div>
+</header>
 
-    <header id="hdr">
-      <div class="wrap nav">
-        <a class="logo" href="index.html">julio<span class="accent">@</span>reyes:~$</a>
-        <ul class="nav-links">
-          <li><a href="index.html#experience">experience</a></li>
-          <li><a href="index.html#projects">projects</a></li>
-          <li><a href="tutorials.html">tutorials</a></li>
-          <li><a href="index.html#contact">contact</a></li>
-        </ul>
-      </div>
-    </header>
+<nav class="main-nav" aria-label="Primary">
+    <a href="index.html#home" data-i18n="nav.home">Home</a>
+    <a href="index.html#architecture" data-i18n="nav.architecture">Infra &amp; CI/CD</a>
+    <a href="index.html#skills" data-i18n="nav.skills">Skills</a>
+    <a href="index.html#projects" data-i18n="nav.projects">Projects</a>
+    <a href="tutorials.html" data-i18n="nav.tutorials">Tutorials</a>
+    <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+</nav>
 
-    <main>
-
-      <section class="tut-hero wrap">
-        <a class="back" href="index.html">← julio@reyes:~$ cd ..</a>
-        <h1>Tutorials</h1>
-        <p class="meta">Step-by-step guides for standing up real services. No fluff — the commands that actually work.</p>
-      </section>
-
-      <!-- index -->
-      <section class="section" style="border-top:none;padding-top:1rem">
-        <div class="wrap">
-          <div class="cards">
-            <a class="tut-card" href="#static-site-aws">
-              <span class="kicker">AWS · Terraform</span>
-              <h3>Deploy a static site on AWS with Terraform</h3>
-              <p>Private S3 + CloudFront (OAC) + ACM TLS + Route53, from zero to live — with remote state.</p>
-            </a>
-            <div class="tut-card">
-              <span class="kicker">coming soon</span>
-              <h3 class="soon">Self-host a service with Docker Compose + Caddy + Tailscale</h3>
-              <p>Reverse proxy, automatic TLS, and private access without opening a port.</p>
-            </div>
-          </div>
+<main class="content">
+    <section class="section">
+        <a class="back-link" href="index.html">&lt; cd ..</a>
+        <div class="section-title-row">
+            <h2>Tutorials</h2>
+            <span class="dir-label">tutorials/</span>
         </div>
-      </section>
+        <p class="section-subtitle">Step-by-step guides for standing up real services. No fluff — the commands that actually work.</p>
 
-      <!-- TUTORIAL 1 -->
-      <article class="section" id="static-site-aws" style="padding-top:1rem">
-        <div class="wrap doc">
-          <p class="meta mono" style="color:var(--muted2)">2026-09-15 · ~20 min · intermediate</p>
-          <h1 style="margin-top:.4rem">Deploy a static site on AWS with Terraform</h1>
-          <div class="tut-hero"><div class="tags"><span>AWS</span><span>Terraform</span><span>CloudFront</span><span>ACM</span><span>Route53</span></div></div>
+        <div class="tut-index">
+            <div class="project-row">
+                <div class="project-main">
+                    <a class="project-name" href="#static-site-aws">deploy-static-site-aws/</a>
+                    <span class="project-desc">Private S3 + CloudFront (OAC) + ACM TLS + Route53, from zero to live — with remote state.</span>
+                </div>
+                <div class="project-meta"><span class="tags">[AWS] [Terraform] [CloudFront] [ACM]</span></div>
+            </div>
+            <div class="project-row">
+                <div class="project-main">
+                    <span class="project-name" style="color:var(--muted)">self-host-with-compose/</span>
+                    <span class="project-desc">Coming soon — Docker Compose + Caddy + Tailscale: reverse proxy, TLS, private access.</span>
+                </div>
+                <div class="project-meta"><span class="tags">[soon]</span></div>
+            </div>
+        </div>
+    </section>
 
-          <p>This is the exact setup behind <a href="index.html">this site</a>: a static site served from a
-          <strong>private</strong> S3 bucket through CloudFront (so the bucket is never public), with a free
-          TLS certificate from ACM and a custom domain on Route53 — all defined as code you can reuse for any
-          site.</p>
+    <!-- TUTORIAL 1 -->
+    <section class="section" id="static-site-aws">
+        <h2>Deploy a static site on AWS with Terraform</h2>
+        <p class="tut-meta">2026-09-15 · ~20 min · intermediate</p>
+        <div class="tut-tags"><span>AWS</span><span>Terraform</span><span>CloudFront</span><span>ACM</span><span>Route53</span></div>
 
-          <div class="callout"><strong>What you'll build:</strong> S3 (private, OAC) → CloudFront (HTTPS, custom domain) → ACM (auto-renewing cert) → Route53 (DNS), with Terraform state in S3 + DynamoDB lock.</div>
+        <div class="doc">
+            <p>This is the exact setup behind <a href="index.html">this site</a>: a static site served from a
+            <strong>private</strong> S3 bucket through CloudFront (so the bucket is never public), with a free TLS
+            certificate from ACM and a custom domain on Route53 — all defined as code you can reuse for any site.</p>
 
-          <h2><span class="n">0.</span> Prerequisites</h2>
-          <ul>
-            <li>An AWS account and the <strong>AWS CLI</strong> logged in (<code>aws sts get-caller-identity</code> works).</li>
-            <li><strong>Terraform ≥ 1.5</strong> (<code>terraform version</code>).</li>
-            <li>A domain with a <strong>Route53 hosted zone</strong>. Get its ID: <code>aws route53 list-hosted-zones --query "HostedZones[].[Name,Id]" --output text</code></li>
-          </ul>
+            <div class="callout"><strong>What you'll build:</strong> S3 (private, OAC) → CloudFront (HTTPS, custom domain) → ACM (auto-renewing cert) → Route53 (DNS), with Terraform state in S3 + a DynamoDB lock.</div>
 
-          <h2><span class="n">1.</span> Bootstrap remote state (once)</h2>
-          <p>State should never live only on your laptop. Create an S3 bucket + a lock table <em>first</em>, in a
-          separate config (you can't store a config's state in a bucket it is itself creating):</p>
-          <pre><code># bootstrap/state.tf
+            <h2>0 · Prerequisites</h2>
+            <ul>
+                <li>An AWS account with the <strong>AWS CLI</strong> logged in (<code>aws sts get-caller-identity</code> works).</li>
+                <li><strong>Terraform ≥ 1.5</strong> (<code>terraform version</code>).</li>
+                <li>A domain with a <strong>Route53 hosted zone</strong>: <code>aws route53 list-hosted-zones --query "HostedZones[].[Name,Id]" --output text</code></li>
+            </ul>
+
+            <h2>1 · Bootstrap remote state (once)</h2>
+            <p>State should never live only on your laptop. Create the bucket + lock table <em>first</em>, in a separate config:</p>
+            <pre><code># bootstrap/state.tf
 resource "aws_s3_bucket" "tf_state" { bucket = "myproj-terraform-state" }
 resource "aws_s3_bucket_versioning" "tf_state" {
   bucket = aws_s3_bucket.tf_state.id
   versioning_configuration { status = "Enabled" }
 }
 resource "aws_dynamodb_table" "tf_lock" {
-  name         = "terraform-locks"
-  billing_mode = "PAY_PER_REQUEST"
-  hash_key     = "LockID"
+  name = "terraform-locks"  billing_mode = "PAY_PER_REQUEST"  hash_key = "LockID"
   attribute { name = "LockID"  type = "S" }
 }</code></pre>
-          <pre><code>cd bootstrap && terraform init && terraform apply</code></pre>
+            <pre><code>cd bootstrap && terraform init && terraform apply</code></pre>
 
-          <h2><span class="n">2.</span> Point the main config at that state</h2>
-          <pre><code># backend.tf
+            <h2>2 · Point the main config at that state</h2>
+            <pre><code># backend.tf
 terraform {
   backend "s3" {
     bucket         = "myproj-terraform-state"
@@ -103,31 +100,25 @@ terraform {
   }
 }</code></pre>
 
-          <h2><span class="n">3.</span> The hosting resources</h2>
-          <p>Two providers — the main region, plus <code>us-east-1</code> because <strong>CloudFront certificates
-          must live in us-east-1</strong>:</p>
-          <pre><code>provider "aws" { region = var.aws_region }
+            <h2>3 · Two providers (CloudFront cert must be us-east-1)</h2>
+            <pre><code>provider "aws" { region = var.aws_region }
 provider "aws" { alias = "us_east_1"  region = "us-east-1" }</code></pre>
-          <p>A <strong>private</strong> bucket (no public access) plus an <strong>Origin Access Control</strong> so
-          only CloudFront can read it:</p>
-          <pre><code>resource "aws_s3_bucket" "site" { bucket = var.site_bucket_name }
+            <p>A <strong>private</strong> bucket plus an Origin Access Control so only CloudFront can read it:</p>
+            <pre><code>resource "aws_s3_bucket" "site" { bucket = var.site_bucket_name }
 
 resource "aws_s3_bucket_public_access_block" "site" {
-  bucket                  = aws_s3_bucket.site.id
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
+  bucket = aws_s3_bucket.site.id
+  block_public_acls = true   block_public_policy = true
+  ignore_public_acls = true  restrict_public_buckets = true
 }
 
 resource "aws_cloudfront_origin_access_control" "oac" {
-  name                              = "myproj-oac"
-  origin_access_control_origin_type = "s3"
-  signing_behavior                  = "always"
-  signing_protocol                  = "sigv4"
+  name = "myproj-oac"  origin_access_control_origin_type = "s3"
+  signing_behavior = "always"  signing_protocol = "sigv4"
 }</code></pre>
-          <p>An ACM cert (DNS-validated, in us-east-1) and the CloudFront distribution that ties it all together:</p>
-          <pre><code>resource "aws_acm_certificate" "cert" {
+
+            <h2>4 · ACM cert + CloudFront distribution</h2>
+            <pre><code>resource "aws_acm_certificate" "cert" {
   provider          = aws.us_east_1
   domain_name       = var.domain_name
   validation_method = "DNS"
@@ -135,9 +126,7 @@ resource "aws_cloudfront_origin_access_control" "oac" {
 }
 # ...a Route53 record validates it, then:
 resource "aws_cloudfront_distribution" "cdn" {
-  enabled             = true
-  aliases             = [var.domain_name]
-  default_root_object = "index.html"
+  enabled = true  aliases = [var.domain_name]  default_root_object = "index.html"
   origin {
     domain_name              = aws_s3_bucket.site.bucket_regional_domain_name
     origin_id                = "s3-origin"
@@ -145,11 +134,10 @@ resource "aws_cloudfront_distribution" "cdn" {
   }
   # default_cache_behavior + viewer_certificate (ACM) ...
 }</code></pre>
-          <div class="callout"><strong>Tip — 404s:</strong> for a multi-page static site, point CloudFront's 404
-          response at <code>/404.html</code>. Only use <code>/index.html</code> if it's a single-page app.</div>
+            <div class="callout"><strong>Tip — 404s:</strong> for a multi-page static site, point CloudFront's 404 response at <code>/404.html</code>. Only use <code>/index.html</code> for a single-page app.</div>
 
-          <h2><span class="n">4.</span> The bucket policy (only CloudFront may read)</h2>
-          <pre><code>data "aws_iam_policy_document" "s3" {
+            <h2>5 · Bucket policy — only CloudFront may read</h2>
+            <pre><code>data "aws_iam_policy_document" "s3" {
   statement {
     actions   = ["s3:GetObject"]
     resources = ["${aws_s3_bucket.site.arn}/*"]
@@ -159,69 +147,40 @@ resource "aws_cloudfront_distribution" "cdn" {
       values = [aws_cloudfront_distribution.cdn.arn]
     }
   }
-}
-resource "aws_s3_bucket_policy" "site" {
-  bucket = aws_s3_bucket.site.id
-  policy = data.aws_iam_policy_document.s3.json
 }</code></pre>
 
-          <h2><span class="n">5.</span> Variables to fill</h2>
-          <pre><code># terraform.tfvars
+            <h2>6 · Fill the variables &amp; ship</h2>
+            <pre><code># terraform.tfvars
 domain_name      = "example.com"
 hosted_zone_id   = "Z0XXXXXXXXXXXXXXX"
-site_bucket_name = "example-com-site"   # globally unique
-aws_region       = "us-west-2"</code></pre>
-
-          <h2><span class="n">6.</span> Ship it</h2>
-          <pre><code>terraform init      # connects to remote state
+site_bucket_name = "example-com-site"   # globally unique</code></pre>
+            <pre><code>terraform init      # connects to remote state
 terraform plan      # read this before applying
 terraform apply     # creates S3, CloudFront, ACM, Route53
 
-# upload your site files
 aws s3 sync ./public s3://example-com-site --delete
-
-# bust the CDN cache after each deploy
 aws cloudfront create-invalidation --distribution-id &lt;ID&gt; --paths "/*"</code></pre>
-          <p>ACM validation and the first CloudFront rollout take a few minutes. When <code>terraform apply</code>
-          finishes and DNS propagates, <code>https://example.com</code> is live — served privately through the CDN,
-          with auto-renewing TLS.</p>
+            <p>ACM validation and the first CloudFront rollout take a few minutes. When it finishes and DNS
+            propagates, <code>https://example.com</code> is live — served privately through the CDN with
+            auto-renewing TLS.</p>
 
-          <h2><span class="n">7.</span> Wire CI/CD (optional, recommended)</h2>
-          <p>Don't sync from your laptop forever. Two clean options:</p>
-          <ul>
-            <li><strong>GitHub Actions + OIDC</strong> — no long-lived keys; the workflow assumes an IAM role, runs
-            <code>s3 sync</code> + a CloudFront invalidation on every push. (This is how
-            <a href="https://delete-from.com" target="_blank" rel="noopener">delete-from.com</a> deploys.)</li>
-            <li><strong>AWS CodePipeline → CodeBuild</strong> — fully inside AWS, driven by a <code>buildspec.yml</code>.
-            (This is how <a href="index.html">this site</a> deploys.)</li>
-          </ul>
+            <h2>7 · Wire CI/CD (recommended)</h2>
+            <ul>
+                <li><strong>GitHub Actions + OIDC</strong> — no long-lived keys; assume a role, <code>s3 sync</code> + invalidate on every push. (How <a href="https://delete-from.com" target="_blank" rel="noopener">delete-from.com</a> deploys.)</li>
+                <li><strong>AWS CodePipeline → CodeBuild</strong> — fully inside AWS, driven by <code>buildspec.yml</code>. (How this site deploys.)</li>
+            </ul>
 
-          <div class="callout"><strong>Why private + OAC instead of an S3 website endpoint?</strong> The bucket is
-          never publicly reachable, you get HTTPS + HTTP/2 + a global CDN for free, and the origin can only be read
-          through your specific distribution. It's the difference between a demo and something you'd run in prod.</div>
+            <div class="callout"><strong>Why private + OAC?</strong> The bucket is never publicly reachable, you get HTTPS + HTTP/2 + a global CDN for free, and the origin is readable only through your specific distribution. The difference between a demo and something you'd run in prod.</div>
 
-          <p style="margin-top:2rem"><a href="index.html">← Back to the CV</a></p>
+            <p style="margin-top:1.6rem"><a href="index.html">&lt; back to the CV</a></p>
         </div>
-      </article>
+    </section>
+</main>
 
-    </main>
+<footer class="footer">
+    <span>© 2026 Julio Reyes — Senior DevOps / Platform Engineer</span>
+</footer>
 
-    <footer>
-      <div class="wrap foot">
-        <span class="copy">© 2026 Julio Reyes</span>
-        <nav>
-          <a href="index.html">home</a>
-          <a href="https://github.com/Julayo" target="_blank" rel="noopener">github</a>
-        </nav>
-      </div>
-    </footer>
-
-    <script>
-      (function () {
-        var h = document.getElementById("hdr");
-        var f = function () { h.classList.toggle("scrolled", window.scrollY > 8); };
-        window.addEventListener("scroll", f, { passive: true }); f();
-      })();
-    </script>
-  </body>
+<script src="js/lang.js" defer></script>
+</body>
 </html>
