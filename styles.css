@@ -648,27 +648,43 @@ a:focus-visible, button:focus-visible {
 .doc a { color: var(--accent2); }
 .doc strong { color: var(--accent); }
 .doc code { font-family: var(--mono); background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: .05rem .35rem; font-size: .9em; color: var(--accent); }
-.doc pre { background: #070d0a; border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.1rem; overflow-x: auto; margin: 0 0 1.2rem; }
+.doc pre { position: relative; background: #05090b; border: 1px solid rgba(124,255,154,.32); border-radius: 10px; padding: 2.7rem 1.1rem 1.1rem; overflow-x: auto; margin: 0 0 1.4rem; box-shadow: 0 8px 22px rgba(0,0,0,.4); }
 .doc pre code { background: none; border: none; padding: 0; color: var(--text); font-size: .84rem; line-height: 1.65; }
 .callout { background: rgba(124,255,154,.07); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 6px; padding: .9rem 1.1rem; margin: 0 0 1.2rem; color: var(--text); font-size: .92rem; }
 .callout strong { color: var(--accent); }
 .tut-index { display: grid; gap: 1rem; margin-bottom: 2.5rem; }
 
-/* ── copy button + tutorial cards ─────────────────── */
-.doc pre { position: relative; padding-top: 2.4rem; }
-.copy-btn {
-  position: absolute; top: 7px; right: 7px;
-  font-family: var(--mono); font-size: .66rem;
-  background: var(--panel); color: var(--muted);
-  border: 1px solid var(--line); border-radius: 5px;
-  padding: .2rem .55rem; cursor: pointer; opacity: .75; transition: .15s;
+/* ── code-box "terminal" chrome + copy button ─────────────────── */
+/* top bar strip on every code box, so a command block reads as a box */
+.doc pre::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 2.1rem;
+  background: linear-gradient(var(--panel), rgba(15,26,19,.35));
+  border-bottom: 1px solid rgba(124,255,154,.20);
+  border-radius: 10px 10px 0 0;
 }
-.copy-btn:hover { color: var(--accent); border-color: var(--accent); opacity: 1; }
-.copy-btn.copied { color: var(--accent); border-color: var(--accent); opacity: 1; }
+/* traffic-light dots in the top bar */
+.doc pre::after {
+  content: "\25CF \25CF \25CF";
+  position: absolute; top: .5rem; left: .85rem;
+  font-size: .55rem; letter-spacing: .18rem;
+  color: rgba(124,255,154,.35);
+}
+.copy-btn {
+  position: absolute; top: .42rem; right: .5rem; z-index: 2;
+  font-family: var(--mono); font-size: .68rem; font-weight: 600;
+  background: rgba(124,255,154,.14); color: var(--accent);
+  border: 1px solid rgba(124,255,154,.45); border-radius: 6px;
+  padding: .25rem .65rem; cursor: pointer; opacity: 1; transition: .15s;
+}
+.copy-btn:hover { background: var(--accent); color: #06110a; border-color: var(--accent); }
+.copy-btn.copied { background: var(--accent); color: #06110a; border-color: var(--accent); }
+
+/* ── tutorial index: clear buttons, not plain links ─────────────────── */
 .tut-cards { display: grid; gap: .8rem; grid-template-columns: 1fr; margin: 1rem 0 2rem; }
 @media (min-width: 640px){ .tut-cards { grid-template-columns: 1fr 1fr; } }
-.tut-cardx { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.1rem; transition: border-color .15s, transform .12s; }
-.tut-cardx:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.tut-cardx { display: block; background: linear-gradient(rgba(124,255,154,.07), rgba(124,255,154,.02)); border: 1px solid rgba(124,255,154,.30); border-radius: 10px; padding: 1rem 1.1rem; transition: transform .12s, border-color .15s, background .15s, box-shadow .15s; }
+.tut-cardx:hover { border-color: var(--accent); background: rgba(124,255,154,.12); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.35); text-decoration: none; }
 .tut-cardx .n { font-family: var(--mono); color: var(--accent); font-size: .72rem; }
 .tut-cardx .t { display: block; color: var(--text); margin-top: .25rem; font-size: .95rem; }
 .tut-cardx .d { display: block; color: var(--muted); font-size: .8rem; margin-top: .3rem; }
@@ -678,6 +694,6 @@ a:focus-visible, button:focus-visible {
 /* ── tutorial links list (CV) ─────────────────────── */
 .tut-links { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: .5rem; grid-template-columns: 1fr; }
 @media (min-width: 620px){ .tut-links { grid-template-columns: 1fr 1fr; } }
-.tut-links a { display: block; font-family: var(--mono); font-size: .88rem; color: var(--accent2); padding: .5rem .7rem; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); transition: border-color .15s, transform .12s; }
-.tut-links a:hover { border-color: var(--accent); transform: translateX(2px); text-decoration: none; }
+.tut-links a { display: block; font-family: var(--mono); font-size: .88rem; color: var(--accent2); padding: .6rem .8rem; border: 1px solid rgba(124,255,154,.30); border-radius: 8px; background: linear-gradient(rgba(124,255,154,.07), rgba(124,255,154,.02)); transition: border-color .15s, transform .12s, background .15s, box-shadow .15s; }
+.tut-links a:hover { border-color: var(--accent); background: rgba(124,255,154,.12); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,.3); text-decoration: none; }
 .tut-links a span { color: var(--muted); font-size: .78rem; }
