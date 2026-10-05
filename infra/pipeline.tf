@@ -68,6 +68,12 @@ data "aws_iam_policy_document" "codebuild_policy" {
     actions   = ["s3:GetObject", "s3:GetObjectVersion"]
     resources = ["${aws_s3_bucket.artifacts.arn}/*"]
   }
+  statement {
+    sid       = "AllowCloudFrontInvalidation"
+    effect    = "Allow"
+    actions   = ["cloudfront:CreateInvalidation", "cloudfront:GetInvalidation"]
+    resources = ["arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${module.site.cloudfront_distribution_id}"]
+  }
 }
 
 resource "aws_iam_role_policy" "codebuild_inline" {
@@ -96,6 +102,12 @@ resource "aws_codebuild_project" "site" {
     environment_variable {
       name  = "TARGET_BUCKET"
       value = var.site_bucket_name
+      type  = "PLAINTEXT"
+    }
+
+    environment_variable {
+      name  = "CLOUDFRONT_DIST_ID"
+      value = module.site.cloudfront_distribution_id
       type  = "PLAINTEXT"
     }
   }
