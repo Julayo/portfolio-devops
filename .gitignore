@@ -21,3 +21,8 @@ resume.html
 
 # Logs
 *.log
+
+# Tailored CV + application artifacts (local only, not for the public site)
+resume-*.html
+resume-*.pdf
+cover-*.md
